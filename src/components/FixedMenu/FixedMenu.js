@@ -5,7 +5,7 @@ const FixedMenu = () => {
     return (
         <div className={styles.holder}>
             <img className={styles.image} src="pfp.png"/>
-            <h1 className={styles.name}>Nicolas Guimont</h1>
+            <h1 className={styles.name}>DangSnake</h1>
             <p className={styles.tagline}>Tagline</p>
             <div className={styles.navbar}>
                 <div className={styles["nav-element"]}>
