@@ -4,6 +4,7 @@
     margin-left: 300px;
     margin-top: 100px;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .title {
@@ -13,8 +14,11 @@
 .card-holder {
     display: grid;
     height: 90%;
+    width: 75%;
+    margin: 0 auto;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
+    gap: 10px;
     place-items: center;
 }
 
@@ -22,14 +26,76 @@
     background-color: black;
     border-radius: 15px;
     width: 90%;
-    height: 90%;
+    height: 85%;
     display: grid;
     margin: 0;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .project-image {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     place-self: center;
     border-radius: 5px;
+}
+
+.overlay {
+    width: 91%;
+    height: 88%;
+    background-color: rgba(0, 0, 0, 0.714);
+    position: absolute;
+    padding: 10px;
+    color: white;
+    place-self: center;
+    backdrop-filter: blur(2px);
+
+}
+
+.mini-image {
+    height: 120px;
+    width: 150px;
+}
+
+.project-top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-title {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.project-tagline {
+    font-size: 12px;
+    margin-left: 5px;
+    color: rgba(255, 255, 255, 0.605);
+    width: 95%;
+}
+
+.project-subtitle {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.project-bottom-row {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    flex-direction: row;
+    margin-top: 10px;
+    height: 100%;
+}
+
+.site-button {
+    border-radius: 15px;
+    padding: 5px 5px;
+    background-color: rgb(198, 22, 198);
+    border: none;
+    place-self: center;
+    width: 80%;
+    margin-bottom: 20px;
+    color: white;
 }
