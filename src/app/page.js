@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import FixedMenu from '@/components/FixedMenu/FixedMenu'
 import AboutSection from '@/components/AboutSection/AboutSection'
 import ProjectSection from '@/components/ProjectSection/ProjectSection'
+import ExperienceSection from '@/components/ExperienceSection/ExperienceSection'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <FixedMenu />
       <AboutSection />
       <ProjectSection />
+      <ExperienceSection />
 
       
     </div>
