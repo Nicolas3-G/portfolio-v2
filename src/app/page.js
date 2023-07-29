@@ -4,6 +4,7 @@ import FixedMenu from '@/components/FixedMenu/FixedMenu'
 import AboutSection from '@/components/AboutSection/AboutSection'
 import ProjectSection from '@/components/ProjectSection/ProjectSection'
 import ExperienceSection from '@/components/ExperienceSection/ExperienceSection'
+import ContactSection from '@/components/ContactSection/ContactSection'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <AboutSection />
       <ProjectSection />
       <ExperienceSection />
-
+      <ContactSection />
       
     </div>
   )

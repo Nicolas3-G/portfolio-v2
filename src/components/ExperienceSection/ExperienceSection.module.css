@@ -10,7 +10,7 @@
 
 .highlight-card {
     width: 50%;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 15px;
     margin: 0 auto;
     height: 45%;
@@ -51,4 +51,70 @@
     height: 90%;
     width: 1%;
     align-self: center;
+}
+
+.highlight {
+    border: 2px solid black;
+    border-radius: 15px;
+    position: relative;
+    height: 60px;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.highlight-title {
+    position: absolute;
+    bottom: 32px;
+    left: 15px;
+    background-color: #f8f8fa;
+    width: fit-content;
+    padding: 0 5px;
+}
+
+.highlight-icon {
+    height: 20px;
+    margin-left: 20px;
+
+}
+
+.highlight-job-name {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.highlight-date {
+    color: rgba(0, 0, 0, 0.489);
+    font-size: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.skills-holder {
+    width: 49%;
+    height: 220px;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-icon {
+    width: 50px;
+    margin-top: 15%;
+}
+
+.skill-holder {
+    width: 95px;
+    height: 50%;
+    text-align: center;
+}
+
+.skill-title {
+    font-size: 14px;
 }
