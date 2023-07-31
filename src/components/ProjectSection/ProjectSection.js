@@ -34,6 +34,7 @@ const ProjectCard = ({ title, img }) => {
 
 const ProjectSection = () => {
     return (
+        <a name="projects">
         <div className={styles.holder}>
             <h2 className={styles.title}>Featured Projects</h2>
             <div className={styles["card-holder"]}>
@@ -43,6 +44,7 @@ const ProjectSection = () => {
                 <ProjectCard title="DevBot Chat" img="project-images/devbot.png"/>
             </div>
         </div>
+        </a>
     )
 }
 

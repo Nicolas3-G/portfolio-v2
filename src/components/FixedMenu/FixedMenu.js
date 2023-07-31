@@ -1,26 +1,29 @@
 import Link from "next/link";
 import styles from "./FixedMenu.module.css";
 
-const FixedMenu = () => {
+const FixedMenu = ({ currentNavSelection }) => {
     return (
         <div className={styles.holder}>
-            <img className={styles.image} src="pfp.png"/>
+            <img className={styles.image} src="pfp.png" />
             <h1 className={styles.name}>DangSnake</h1>
             <p className={styles.tagline}>Tagline</p>
             <div className={styles.navbar}>
                 <div className={styles["nav-element"]}>
-                    <label>About</label>
+                    {currentNavSelection == "About" && <p>***</p>}
+                    <a href="#about">About</a>
                 </div>
                 <div className={styles["nav-element"]}>
-                    <label>Projects</label>
+                    {currentNavSelection == "Projects" && <p>***</p>}
+                    <a href="#projects">Projects</a>
                 </div>
                 <div className={styles["nav-element"]}>
-                    <label>Experience</label>
+                    {currentNavSelection == "Experience" && <p>***</p>}
+                    <a href="#experience">Experience</a>
                 </div>
                 <div className={styles["nav-element"]}>
-                    <label>Contact</label>
+                    {currentNavSelection == "Contact" && <p>***</p>}
+                    <a href="#contact">Contact</a>
                 </div>
-
             </div>
         </div>
     )
