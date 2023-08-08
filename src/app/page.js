@@ -14,7 +14,6 @@ export default function Home() {
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    console.log("Handle Scrolled handled", scrollY)
     if (scrollY > 550  && scrollY < 1300 ) {
       setCurrentNavSelection("Projects")
     } else if ( scrollY > 1300 && scrollY < 2300) {

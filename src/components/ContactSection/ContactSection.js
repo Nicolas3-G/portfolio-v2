@@ -8,28 +8,20 @@ const ContactForm = () => {
 
     const sendEmail = async (e) => {
         e.preventDefault();
-        console.log("SENDING EMAIL>>>");
-        emailjs.sendForm(process.env.EMAIL_SERVICE_KEY, 'template_fbnqjwj', e.target, '-8Zb6WZ78zgtK80L3')
-        .then((result) => {
-            console.log(result.text);
-            responseText = result.text;
-        }, (error) => {
-            console.log(error.text);
-            responseText = error.text;
-        });
 
+        console.log("{printing TARGET}: ", e.target);
+        const formData = new FormData(e.target)
 
-        // const response = await fetch("/api/email", {
-        //     method: "POST",
-        //     body: jsonData
-        // })
-        // const data = await response.json();
-        // console.log("LOGGING RESPONSE", data);
-
+        const response = await fetch("/api/email", {
+            method: "POST",
+            body: formData
+        })
+        const data = await response.json();
+        console.log("LOGGING RESPONSE", data);
     };
 
     return (
-        <form ref={form} action={() => sendEmailAction(form.current)} onSubmit={(e) => e.preventDefault()}className={styles["contact-form"]}>
+        <form id="myForm" ref={form} onSubmit={(e) => sendEmail(e)} className={styles["contact-form"]}>
             <div className={styles["form-text-holder"]}>
                 <h3>Write a message 👋</h3>
                 <div className={styles["input-holder"]}>
