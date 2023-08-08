@@ -4,6 +4,7 @@
     margin-top: 50px;
     overflow-x: hidden;
     padding-bottom: 80px;
+    position: relative;
 }
 
 .title {
@@ -16,11 +17,37 @@
     height: 90%;
     width: 75%;
     margin: 0 auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     padding: 30px;
     grid-template-rows: 50% 50%;
     gap: 20px;
     place-items: center;
+    overflow: hidden;
+    transition: grid-template-columns 0.3s ease-in-out, grid-template-rows 0.3s ease-in-out;
+}
+
+.card-holder.focused-view-1 {
+    grid-template-rows: 100% 0;
+    grid-template-columns: 100% 0%;
+
+}
+
+.card-holder.focused-view-2 {
+    grid-template-rows: 100% 0;
+    grid-template-columns: 0 100%;
+
+}
+.card-holder.focused-view-3 {
+    grid-template-rows: 0% 100%;
+    grid-template-columns: 100% 0%;
+    gap: 0;
+
+}
+.card-holder.focused-view-4 {
+    grid-template-rows: 0% 100%;
+    grid-template-columns: 0% 100%;
+    gap: 0;
+
 }
 
 .project-card {
@@ -28,16 +55,23 @@
     height: 80%;
     display: grid;
     margin: 0;
+    flex: 1;
     background-color: white;
     padding: 35px;
     position: relative;
     overflow: hidden;
-    transition: box-shadow 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .project-card:hover {
     box-shadow: 11px 11px 130px 70px rgba(206, 212, 224, .32);
 }
+
+.project-card.selected {
+    flex: 2;
+}
+
+
 
 .project-image {
     width: 100%;
@@ -55,7 +89,6 @@
     color: white;
     place-self: center;
     backdrop-filter: blur(2px);
-
 }
 
 .mini-image {
@@ -113,4 +146,25 @@
     margin: 0;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.705);
+}
+
+.project-card.not-selected {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+.close-button {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    background-color: transparent;
+    padding: 2px 5px;
+    border-radius: 15px;
+    border: none;
+}
+
+.exit-icon {
+    width: 20px;
+    height: 20px;
 }
