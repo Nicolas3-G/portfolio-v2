@@ -1,49 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import styles from "./ContactSection.module.css";
-import emailjs from '@emailjs/browser';
-import { sendEmailAction } from "@/app/actions";
+import ContactForm from "./components/ContactForm";
 
-const ContactForm = () => {
-    const form = useRef();
 
-    const sendEmail = async (e) => {
-        e.preventDefault();
 
-        console.log("{printing TARGET}: ", e.target);
-        const formData = new FormData(e.target)
+const ContactSection = ({ runEmailAnimation }) => {
 
-        const response = await fetch("/api/email", {
-            method: "POST",
-            body: formData
-        })
-        const data = await response.json();
-        console.log("LOGGING RESPONSE", data);
-    };
-
-    return (
-        <form id="myForm" ref={form} onSubmit={(e) => sendEmail(e)} className={styles["contact-form"]}>
-            <div className={styles["form-text-holder"]}>
-                <h3>Write a message 👋</h3>
-                <div className={styles["input-holder"]}>
-                    <label className={styles["input-label"]}>Your Name</label>
-                    <input className={styles["input-field"]} name="user_name" type="text"></input>
-                </div>
-                <div className={styles["input-holder"]}>
-                    <label className={styles["input-label"]}>Your Email</label>
-                    <input className={styles["input-field"]} name="user_email" type="email"></input>
-                </div>
-                <div className={styles["input-holder"]}>
-                    <label className={styles["input-label"]}>Your Message</label>
-                    <textarea className={`${styles["input-field"]} ${styles["text-field"]}`} name="message"></textarea>
-                </div>
-                <input className={styles.button} type="submit" value="Send" />
-            </div>
-
-        </form>
-    )
-}
-
-const ContactSection = () => {
     const SocialLink = ({ link, img }) => {
         return (
             <div className={styles["social-item"]}>
@@ -66,13 +28,14 @@ const ContactSection = () => {
         )
     }
 
+
     return (
         <>
             <a name="contact" />
             <div className={styles.holder}>
                 <h2 className={styles.title}>Contact</h2>
                 <div className={styles.grid}>
-                    <ContactForm />
+                    <ContactForm runEmailAnimation={runEmailAnimation} />
                     <SocialCard />
                     <div className={styles["third-card"]}>
                     </div>

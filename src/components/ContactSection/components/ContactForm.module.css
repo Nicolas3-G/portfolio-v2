@@ -120,36 +120,7 @@
     top: 20px;
     right: 20px;
     width: 250px;
-    height: 50px;
-    display: flex;
-    align-items: center;
+    height: 300px;
     border-radius: 15px;
     border: 2px solid black;
-    overflow: hidden;
-
-}
-
-.confirm-icon {
-    width: 30px;
-    height: 30px;
-    margin: 0px 10px;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 10%;
-    position: absolute;
-    bottom: 0px;
-    background-color: green;
-    animation: drain-bar 15s forwards linear;
-}
-
-@keyframes drain-bar {
-    0% {
-        width: 100%;
-    }
-
-    100% {
-        width: 0%;
-    }
 }
