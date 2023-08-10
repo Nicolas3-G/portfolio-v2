@@ -15,13 +15,14 @@ const ContactForm = ({ runEmailAnimation }) => {
         emailjs.sendForm(key, 'template_fbnqjwj', e.target, '-8Zb6WZ78zgtK80L3')
             .then((result) => {
                 console.log("Success Email")
-                runEmailAnimation();
+                runEmailAnimation("success");
+                setUserName("");
+                setUserEmail("")
+                setUserMessage("");
             }, (error) => {
                 console.log("Email ERROR!", error)
+                runEmailAnimation("error");
             });
-        setUserName("");
-        setUserEmail("")
-        setUserMessage("");
     }
 
 
@@ -31,15 +32,15 @@ const ContactForm = ({ runEmailAnimation }) => {
                 <h3>Write a message 👋</h3>
                 <div className={styles["input-holder"]}>
                     <label className={styles["input-label"]}>Your Name</label>
-                    <input onChange={(e) => setUserName(e.target.value)} value={userName} className={styles["input-field"]} name="user_name" type="text"></input>
+                    <input required onChange={(e) => setUserName(e.target.value)} value={userName} className={styles["input-field"]} name="user_name" type="text"></input>
                 </div>
                 <div className={styles["input-holder"]}>
                     <label className={styles["input-label"]}>Your Email</label>
-                    <input onChange={(e) => setUserEmail(e.target.value)} value={userEmail} className={styles["input-field"]} name="user_email" type="email"></input>
+                    <input required onChange={(e) => setUserEmail(e.target.value)} value={userEmail} className={styles["input-field"]} name="user_email" type="email"></input>
                 </div>
                 <div className={styles["input-holder"]}>
                     <label className={styles["input-label"]}>Your Message</label>
-                    <textarea onChange={(e) => setUserMessage(e.target.value)} value={userMessage} className={`${styles["input-field"]} ${styles["text-field"]}`} name="message"></textarea>
+                    <textarea required onChange={(e) => setUserMessage(e.target.value)} value={userMessage} className={`${styles["input-field"]} ${styles["text-field"]}`} name="message"></textarea>
                 </div>
                 <input className={styles.button} type="submit" value="Send" />
             </div>

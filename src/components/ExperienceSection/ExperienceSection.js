@@ -1,6 +1,10 @@
+import { useState } from "react";
 import styles from "./ExperienceSection.module.css";
 
 const ExperienceSection = () => {
+    const [showOverlay, setShowOverlay] = useState(false);
+
+
     const Skill = ({ name, img }) => {
         return (
             <div className={styles["skill-holder"]}>
@@ -10,8 +14,50 @@ const ExperienceSection = () => {
         )
     }
 
+    const handleDownloadClick = async () => {
+        try {
+            // Fetch the file
+            const response = await fetch("resume.pdf");
+            const fileData = await response.blob();
+
+            // Create a Blob with the file
+            const blob = new Blob([fileData], { type: 'application/pdf' });
+
+            // Create a URL for the Blob
+            const url = URL.createObjectURL(blob);
+
+            // Create a link element and simulate a click to initiate download
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = "nicolas-resume";
+            link.click();
+
+            // Clean up the URL object after download
+            URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Error downloading PDF:', error);
+        }
+    }
+
+    const handleViewClick = () => {
+        setShowOverlay(true);
+    }
+
+    const handleOverlayClick = () => {
+        if (showOverlay) {
+            setShowOverlay(false);
+        }
+    }
+
     return (
         <a name="experience">
+            {showOverlay &&
+                <div onClick={handleOverlayClick} className={styles["overlay"]}>
+                     <img onClick={() => setShowOverlay(false)} src="exit-icon.png" className={styles["overlay-exit-button"]}/>
+                    <div className={styles["overlay-ui-holder"]}>
+                        <img src="resume-image.jpg" className={styles["resume-image"]}/>
+                    </div>
+                </div>}
             <div className={styles.holder}>
                 <h2 className={styles.title}>Experience</h2>
                 <div className={styles["highlight-card"]}>
@@ -40,8 +86,8 @@ const ExperienceSection = () => {
                     <div className={styles["resume-holder"]}>
                         <h3>Resume</h3>
                         <img className={styles["resume-icon"]} src="resume-icon.png" alt="resume" />
-                        <button className={styles.button}>Download</button>
-                        <button className={styles.button}>View</button>
+                        <button onClick={handleDownloadClick} className={styles.button}>Download</button>
+                        <button onClick={handleViewClick} className={styles.button}>View</button>
                     </div>
                 </div>
                 <div>

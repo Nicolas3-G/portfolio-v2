@@ -9,14 +9,15 @@ import ExperienceSection from '@/components/ExperienceSection/ExperienceSection'
 import ContactSection from '@/components/ContactSection/ContactSection'
 import { useEffect, useState } from 'react'
 import Form from '@/components/Form';
+import classNames from 'classnames';
 
 export default function Home() {
   const [currentNavSelection, setCurrentNavSelection] = useState("About");
-  const [playAnimation, setPlayAnimation] = useState(false);
+  const [playAnimation, setPlayAnimation] = useState();
 
-  const runEmailAnimation = () => {
-      setPlayAnimation(true);
-      setTimeout(() => {setPlayAnimation(false)}, 10000)
+  const runEmailAnimation = (type) => {
+      setPlayAnimation(type);
+      setTimeout(() => {setPlayAnimation()}, 10000)
   }
 
   const handleScroll = () => {
@@ -45,9 +46,9 @@ export default function Home() {
   const EmailAnimation = () => {
     return (
         <div className={styles["animation-card"]}>
-            <img className={styles["confirm-icon"]}src="confirm-icon.png" />
-            <p>Message Sent 👍</p>
-            <div className={styles["progress-bar"]}/>
+            <img className={styles["confirm-icon"]} src={playAnimation == "success" ? "confirm-icon.png":"error-icon.png"} />
+            <p>{playAnimation == "success" ? "Message Sent 👍": "Failed to send!"}</p>
+            <div className={classNames(styles["progress-bar"], playAnimation == "error" && styles["error"])} />
             <img onClick={() => setPlayAnimation(false)} src={"exit-icon.png"} className={styles["animation-exit-icon"]}/>
         </div>
     )

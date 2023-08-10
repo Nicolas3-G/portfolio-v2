@@ -47,8 +47,12 @@
     height: 10%;
     position: absolute;
     bottom: 0px;
-    background-color: green;
+    background-color: #6fdfaf;
     animation: drain-bar 10.1s forwards linear;
+}
+
+.progress-bar.error {
+    background-color: #d75a4a;
 }
 
 @keyframes drain-bar {

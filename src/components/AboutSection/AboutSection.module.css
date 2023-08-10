@@ -37,6 +37,11 @@
     border-radius: 45px;
 }
 
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
 .name {
     color: rgb(198, 22, 198);
 }

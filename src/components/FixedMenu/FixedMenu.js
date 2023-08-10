@@ -27,9 +27,9 @@ const FixedMenu = ({ currentNavSelection }) => {
                 </div>
             </div>
             <div className={styles["social-bar"]}>
-                <a><img className={styles["social-icon"]} src="socials/github-icon.png"/></a>
-                <a><img className={styles["social-icon"]} src="socials/linked-icon.png"/></a>
-                <a><img className={styles["social-icon"]} src="socials/twitter-icon.png"/></a>
+                <a href="https://github.com/Nicolas3-G" target="_blank"><img className={styles["social-icon"]} src="socials/github-icon.png"/></a>
+                <a href="https://www.linkedin.com/in/nicolas3/" target="_blank"><img className={styles["social-icon"]} src="socials/linked-icon.png"/></a>
+                <a href="https://twitter.com/DangSnake" target="_blank"><img className={styles["social-icon"]} src="socials/twitter-icon.png"/></a>
             </div>
         </div>
     )
