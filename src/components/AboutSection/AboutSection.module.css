@@ -32,9 +32,13 @@
 .button {
     width: 200px;
     height: 50px;
+    display: inline-block;
     border: 3px solid black;
     background-color: transparent;
+    text-decoration: none;
     border-radius: 45px;
+    color: black;
+    align-content: center;
 }
 
 .button:hover {

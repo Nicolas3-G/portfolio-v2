@@ -75,7 +75,7 @@
 
 .focused-project-image {
     width: 100%;
-  
+    border: 4px solid rgba(139, 137, 137, 0.242);
     place-self: center;
     border-radius: 5px;
 }
@@ -197,17 +197,33 @@
 
 .tech-section {
     margin-top: auto;
-    height: 150px;
+    height: 180px;
+    width: 95%;
 }
 
 .focused-button {
     margin: 20px 10px;
     padding: 5px 15px;
     border-radius: 15px;
+    font-size: 22px;
     border: none;
     background-color: #6fdfaf;
     display: flex;
     align-items: center;
+}
+
+
+.focused-button.two {
+    background: #202123;
+    color: white; 
+}
+
+.focused-button.two:hover {
+    background-color: #595b5d;
+}
+
+.focused-button:hover {
+    background-color: #a1ebcb;
 }
 
 .focused-button p {
@@ -215,22 +231,89 @@
 }
 
 .focused-button-icon {
-    width: 15px;
-    height: 15px;
+    width: 22px;
+    height: 22px;
 }
 
 .focused-project-title {
     margin: 10px 0;
-    color: white;
-    background-color: black;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding: 10px 5px;
+    font-size: 24px;
 }
 
 .focused-project-desc {
     margin: 0;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.705);
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.505);
     padding: 0px 5px;
+}
+
+.bubble {
+    border-radius: 100%;
+    padding: 2px;
+    width: 57px;
+    font-size: 12px;
+    height: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 5px;
+}
+
+.bubble p {
+    margin: 0px 0;
+    font-weight: bold;
+}
+
+.bubble.html {
+    background-color: #6fdfaf;
+    color: white;
+}
+
+.bubble.css {
+    background-color: #ec7b7b;
+    color: white;
+}
+
+.bubble.js {
+    background-color: #c2d5a8;
+    color: white;
+    font-size: 10px;
+}
+
+.bubble.react {
+    background-color: #bad5f0;
+    color: white;
+}
+
+.bubble.next {
+    color: white;
+    background-color: black;
+}
+
+.bubble-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+    padding: 10px 0;
+    height: fit-content;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.bubble-card {
+    border-radius: 15px;
+    background-color: #e3e2e2;
+    height: 90%;
+}
+
+
+.bubble-image {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
 }
