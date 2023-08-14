@@ -1,32 +1,4 @@
-.holder {
-    margin-left: 300px;
-    display: flex;
-    justify-content: center;
-    overflow-x: hidden;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    
-}
 
-.title {
-    text-align: center;
-    font-size: 34px;
-}
-
-.grid {
-    display: grid;
-    margin-top: 20px;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 40% 60%;
-    gap: 5px 10px;
-    width: 60%;
-    height: 60%;
-    grid-template-areas: 
-        "form socials"
-        "form third"
-    ;
-}
 
 .contact-form {
     border: 3px solid black;
@@ -59,26 +31,12 @@
 
 .input-field.text-field {
     height: 150px;
+    resize: none;
 }
 
 .input-label {
     margin-bottom: 5px;
     font-size: 14px;
-}
-
-.social-card {
-    border: 3px solid black;
-    border-radius: 15px;
-    width: 100%;
-    grid-area: socials;
-}
-
-.third-card {
-    border: 3px solid black;
-    border-radius: 15px;
-    width: 100%;
-    height: 100%;
-    grid-area: third;
 }
 
 .button {
@@ -94,33 +52,4 @@
     transition: background-color .3 ease-in-out;
     background-color: white;
     color: black;
-}
-
-.social-icon {
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    margin-left: 20px;
-    margin-right: 5px;
-}
-
-.social-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.social-item a {
-    text-decoration: none;
-}
-
-.animation-card {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 250px;
-    height: 300px;
-    border-radius: 15px;
-    border: 2px solid black;
 }

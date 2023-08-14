@@ -6,21 +6,56 @@ import { useState } from "react";
 const ProjectSection = () => {
     const [selectedProject, setSelectedProject] = useState();
 
-    const SkillBubble = ({title, style}) => {
+    const bubbleDataObject = {
+        html: {
+            title: "HTML",
+            style: "html",
+            image: "skill-icons/html-icon-green.png"
+        },
+        css: {
+            title: "CSS",
+            style: "css",
+            image: "skill-icons/css-icon-red.png"
+        },
+        javascript: {
+            title: "JavaScript",
+            style: "js",
+            image: "skill-icons/javascript-icon-orange.png"
+        },
+        react: {
+            title: "ReactJS",
+            style: "react",
+            image: "skill-icons/react-icon-blue.png"
+        },
+        next: {
+            title: "NextJS",
+            style: "next",
+            image: "skill-icons/next-icon.png"
+        },
+        node: {
+            title: "NodeJS",
+            style: "node",
+            image: "skill-icons/node-icon-purple.png"
+        },
+    }
+
+    const SkillBubble = ({ title, style, image }) => {
         return (
-            <div className={`${styles.bubble} ${styles[style]}`}>
-                {/* <img className={styles["bubble-image"]} src="socials/github-icon.png" /> */}
-                <p>{title}</p>
+
+            <div className={`${styles["bubble-element"]}`}>
+                <div className={`${styles["bubble"]} ${styles[style]}`}>
+                    <img src={image} className={styles["bubble-image"]}/>
+                </div>
+                <p className={`${styles["bubble-title"]} ${styles[style]}`}>{title}</p>
             </div>
         )
     }
 
-    const ProjectCard = ({ title, assetPath, id, siteLink, gitLink }) => {
+    const ProjectCard = ({ title, assetPath, id, siteLink, gitLink, quickDesc, skills }) => {
         const [displayOverlay, setDisplayOverlay] = useState(false);
 
         const imgPath = `project-images/${assetPath}.png`;
         const gifPath = `project-images/${assetPath}-gif.gif`;
-
 
         const handleProjectClick = () => {
             setSelectedProject(id);
@@ -31,8 +66,14 @@ const ProjectSection = () => {
                 {selectedProject != id ?
                     <>
                         <img src={imgPath} className={styles["project-image"]} />
-                        <h3 className={styles["project-title"]}>{title}</h3>
-                        <p className={styles["project-desc"]}>Project description will go here.</p>
+                        <div className={styles["project-bottom-section"]}>
+                            <div>
+                                <h3 className={styles["project-title"]}>{title}</h3>
+                                <p className={styles["project-desc"]}>{quickDesc}</p>
+                            </div>
+                            <img className={styles["expand-icon"]} src="expand-icon-2.png"/>
+                        </div>
+
                     </> :
                     <>
                         {/* FOCUSED(selected) PROJECT HTML*/}
@@ -43,11 +84,7 @@ const ProjectSection = () => {
                                 Tech Stack:
                                 <div className={styles["bubble-card"]}>
                                     <div className={styles["bubble-holder"]}>
-                                        <SkillBubble title="HTML" style="html"/>
-                                        <SkillBubble title="CSS" style="css"/>
-                                        <SkillBubble title="JavaScript" style="js"/>
-                                        <SkillBubble title="ReactJS" style="react"/>
-                                        <SkillBubble title="NextJS" style="next"/>
+                                        {skills.map(skill => <SkillBubble {...bubbleDataObject[skill]} />)}
                                     </div>
                                 </div>
 
@@ -56,8 +93,8 @@ const ProjectSection = () => {
                         <div className={styles["focused-project-right-section"]}>
                             <img src={gifPath} className={styles["focused-project-image"]} />
                             <div className={styles["focused-button-bar"]}>
-                                <a style={{textDecoration: "none"}} href={gitLink}><button className={`${styles["focused-button"]} ${styles["two"]}`}><img className={styles["focused-button-icon"]} src="socials/github-icon.png" /><p>Github</p></button></a>
-                                <a style={{textDecoration: "none"}} href={siteLink}><button className={styles["focused-button"]}><img className={styles["focused-button-icon"]} src="live-site-icon.png" /><p>Live Site</p></button></a>
+                                <a style={{ textDecoration: "none" }} target="_blank" href={gitLink}><button className={`${styles["focused-button"]} ${styles["two"]}`}><img className={styles["focused-button-icon"]} src="socials/github-icon.png" /><p>Github</p></button></a>
+                                <a style={{ textDecoration: "none" }} href={siteLink} target="_blank"><button className={styles["focused-button"]}><img className={styles["focused-button-icon"]} src="live-site-icon.png" /><p>Live Site</p></button></a>
 
                             </div>
                         </div>
@@ -82,10 +119,10 @@ const ProjectSection = () => {
                 <div className={classNames(styles["card-holder"], selectedProject && styles[`focused-view-${selectedProject}`])}>
                     {/* Focused value checks that there is no project selected or if there is which one should be displayed */}
                     {/* ID should be set to order it appears in grid, used for click handling */}
-                    <ProjectCard title="CryptoSecure" assetPath="crypto-secure" siteLink="https://crypto-secure.vercel.app/" gitLink="https://crypto-secure.vercel.app/" id={1} />
-                    <ProjectCard title="Nextri" assetPath="nextri" id={2} siteLink="https://nextri.vercel.app/" />
-                    <ProjectCard title="MyWeather" assetPath="my-weather" siteLink="https://nicolas3-g.github.io/MyWeather/" id={3} />
-                    <ProjectCard title="DevBot Chat" assetPath="devbot" siteLink="https://nicolas3-g.github.io/devbot/" id={4} />
+                    <ProjectCard skills={["html", "css", "javascript", "next", "react"]} title="CryptoSecure" quickDesc="Streamlined crypto banking platform" assetPath="crypto-secure" siteLink="https://crypto-secure.vercel.app/" gitLink="https://github.com/Nicolas3-G/CryptoSecure" id={1} />
+                    <ProjectCard skills={["html", "css", "javascript", "next", "react"]} title="Nextri" quickDesc="User-friendly clothing e-commerce site" assetPath="nextri"  id={2} siteLink="https://nextri.vercel.app/" gitLink="https://github.com/Nicolas3-G/Nextri" />
+                    <ProjectCard skills={["html", "css", "javascript", "react", "node"]} title="MyWeather" quickDesc="Intuitive weather app for accurate forecasts" assetPath="my-weather" siteLink="https://nicolas3-g.github.io/MyWeather/" gitLink="https://github.com/Nicolas3-G/MyWeather" id={3} />
+                    <ProjectCard skills={["html", "css", "javascript", "react"]} title="DevBot Chat" quickDesc="A trio of interactive chatbots at your service" assetPath="devbot" siteLink="https://nicolas3-g.github.io/devbot/" gitLink="https://github.com/Nicolas3-G/devbot" id={4} />
                     {selectedProject && <button className={styles["close-button"]} onClick={() => setSelectedProject(null)}><img className={styles["exit-icon"]} src="exit-icon.png" /></button>}
                 </div>
             </div>

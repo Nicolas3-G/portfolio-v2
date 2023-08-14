@@ -73,7 +73,7 @@
     grid-area: socials;
 }
 
-.third-card {
+.tweet-card {
     border: 3px solid black;
     border-radius: 15px;
     width: 100%;
@@ -152,4 +152,57 @@
     100% {
         width: 0%;
     }
+}
+
+.pfp-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.tweet {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+}
+
+.tweet-content {
+    padding: 5px;
+}
+
+.tweet-top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1px;
+}
+
+.user-at {
+    font-size: 11px;
+    margin: 0 3px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.282);
+}
+
+.time-text {
+    font-size: 11px;
+    margin: 0;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.282);
+}
+
+.tweet-text {
+    font-size: 12px;
+    margin: 0;
+}
+
+.tweet-feed {
+    border-top: 1px solid black;
+    max-height: 83%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
 }

@@ -22,7 +22,6 @@
     grid-template-rows: 50% 50%;
     gap: 20px;
     place-items: center;
-    overflow: hidden;
     transition: grid-template-columns 0.3s ease-in-out, grid-template-rows 0.3s ease-in-out;
 }
 
@@ -65,6 +64,7 @@
 
 .project-card:hover {
     box-shadow: 11px 11px 130px 70px rgba(206, 212, 224, .32);
+    transform: scale(1.01);
 }
 
 .project-card.selected {
@@ -126,13 +126,6 @@
     margin-left: 5px;
 }
 
-.project-bottom-row {
-    display: grid;
-    grid-template-columns: 65% 35%;
-    flex-direction: row;
-    margin-top: 10px;
-    height: 100%;
-}
 
 .site-button {
     border-radius: 15px;
@@ -143,6 +136,11 @@
     width: 80%;
     margin-bottom: 20px;
     color: white;
+}
+
+.project-bottom-section {
+    display: flex;
+    flex-direction: row;
 }
 
 .project-title {
@@ -250,17 +248,13 @@
     padding: 0px 5px;
 }
 
-.bubble {
-    border-radius: 100%;
-    padding: 2px;
-    width: 57px;
+.bubble-element {
+    border-radius: 15px;
     font-size: 12px;
-    height: 57px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     margin: 5px 5px;
+    width: 62px;
 }
 
 .bubble p {
@@ -268,30 +262,34 @@
     font-weight: bold;
 }
 
-.bubble.html {
-    background-color: #6fdfaf;
-    color: white;
+.html {
+    background-color: #e3f0d9;
+    color: #91cb64 !important;
 }
 
-.bubble.css {
-    background-color: #ec7b7b;
-    color: white;
+.css {
+    background-color: #fce1e2;
+    color: #fd777f !important;
 }
 
-.bubble.js {
-    background-color: #c2d5a8;
-    color: white;
-    font-size: 10px;
+.js {
+    background-color: #fcefdb;
+    color: #fdb042 !important;;
 }
 
-.bubble.react {
-    background-color: #bad5f0;
-    color: white;
+.react {
+    background-color: #dbf1fc;
+    color: #57baeb !important
 }
 
-.bubble.next {
-    color: white;
-    background-color: black;
+.next {
+    background-color: #bdbdbd;
+    color: black !important;
+}
+
+.node {
+    background-color: #f5dbfc;
+    color: #c964cb !important
 }
 
 .bubble-holder {
@@ -307,13 +305,40 @@
 
 .bubble-card {
     border-radius: 15px;
-    background-color: #e3e2e2;
+    /* background-color: #e3e2e2; */
     height: 90%;
 }
 
 
+.expand-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+.expand-icon:hover {
+    transform: scale(1.1);
+}
+
 .bubble-image {
-    width: 25px;
-    height: 25px;
-    margin-top: 5px;
+    width: 17px;
+    height: 17px;
+}
+
+.bubble {
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-content: center;
+    margin-bottom: 3px;
+}
+
+.bubble-title {
+    margin: 0;
+    color: #91cb64;
+    font-weight: bold;
+    background-color: transparent !important;
 }
