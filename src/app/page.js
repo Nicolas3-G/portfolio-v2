@@ -25,9 +25,9 @@ export default function Home() {
     playAnimation && setPlayAnimation(false);
     if (scrollY > 550 && scrollY < 1300) {
       setCurrentNavSelection("Projects")
-    } else if (scrollY > 1300 && scrollY < 2300) {
+    } else if (scrollY >= 1300 && scrollY < 2300) {
       setCurrentNavSelection("Experience")
-    } else if (scrollY > 2300) {
+    } else if (scrollY >= 2300) {
       setCurrentNavSelection("Contact")
     } else {
       setCurrentNavSelection("About")
