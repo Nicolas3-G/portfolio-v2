@@ -1,6 +1,31 @@
 .holder {
     margin-left: 300px;
     height: 100vh;
+    max-height: 100vh;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.holder.fade-in {
+    animation: slide-fade-in 1.5s ease-in-out forwards;
+
+}
+
+@keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 .title {

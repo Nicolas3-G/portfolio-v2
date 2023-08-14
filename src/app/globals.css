@@ -7,5 +7,5 @@ body {
   overflow-x: hidden;
   background-color: #f8f8fa;
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif !important;
 }

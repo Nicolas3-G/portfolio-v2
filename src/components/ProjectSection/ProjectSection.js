@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./ProjectSection.module.css";
 import { useState } from "react";
 
-const ProjectSection = () => {
+const ProjectSection = ({ scrollAnimationList }) => {
     const [selectedProject, setSelectedProject] = useState();
 
     const bubbleDataObject = {
@@ -114,7 +114,7 @@ const ProjectSection = () => {
 
     return (
         <a name="projects">
-            <div className={styles.holder}>
+            <div className={classNames(styles.holder, scrollAnimationList[0] && styles["fade-in"])}>
                 <h2 className={styles.title}>Featured Projects</h2>
                 <div className={classNames(styles["card-holder"], selectedProject && styles[`focused-view-${selectedProject}`])}>
                     {/* Focused value checks that there is no project selected or if there is which one should be displayed */}

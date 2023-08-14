@@ -8,22 +8,26 @@ import ProjectSection from '@/components/ProjectSection/ProjectSection'
 import ExperienceSection from '@/components/ExperienceSection/ExperienceSection'
 import ContactSection from '@/components/ContactSection/ContactSection'
 import { useEffect, useState } from 'react'
-import Form from '@/components/Form';
 import classNames from 'classnames';
+import EmailAnimation from '@/components/EmailAnimation/EmailAnimation';
 
 export default function Home() {
   const [currentNavSelection, setCurrentNavSelection] = useState("About");
-  const [playAnimation, setPlayAnimation] = useState();
+  // Handles email card animation
+  const [playAnimation, setPlayAnimation] = useState(null);
+  const [scrollAnimationList, setScrollAnimationList] = useState([false, false, false]);
+
+  useEffect(() => {console.log("LOGGING PLAY ANIMATION (email):", playAnimation)}, [playAnimation])
 
   const runEmailAnimation = (type) => {
-      setPlayAnimation(type);
-      setTimeout(() => {setPlayAnimation()}, 10000)
+    setPlayAnimation(type);
+    setTimeout(() => { setPlayAnimation(null) }, 10000)
   }
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    playAnimation && setPlayAnimation(false);
-    if (scrollY > 550 && scrollY < 1300) {
+    // playAnimation && setPlayAnimation(false);
+    if (scrollY > 500 && scrollY < 1300) {
       setCurrentNavSelection("Projects")
     } else if (scrollY >= 1300 && scrollY < 2300) {
       setCurrentNavSelection("Experience")
@@ -32,7 +36,20 @@ export default function Home() {
     } else {
       setCurrentNavSelection("About")
     }
+    // Handle Scroll animations
+    // Updates state list that tracks which animation to fire and which has fired
+    if (scrollY > 100 && !scrollAnimationList[0]) {
+      setScrollAnimationList((prev) => ([true, prev[1], prev[2]]))
+    } 
+    if (scrollY > 1100 && !scrollAnimationList[1]) {
+      setScrollAnimationList((prev) => ([prev[0], true, prev[2]]))
+    }
+    if (scrollY > 2000 && !scrollAnimationList[2]) {
+      setScrollAnimationList((prev) => ([prev[0], prev[1], true]))
+    }
   }
+
+  useEffect(() => {console.log("Logging animation list: ", scrollAnimationList)}, [scrollAnimationList])
 
 
   useEffect(() => {
@@ -43,26 +60,15 @@ export default function Home() {
     }
   })
 
-  const EmailAnimation = () => {
-    return (
-        <div className={styles["animation-card"]}>
-            <img className={styles["confirm-icon"]} src={playAnimation == "success" ? "confirm-icon.png":"error-icon.png"} />
-            <p>{playAnimation == "success" ? "Message Sent 👍": "Failed to send!"}</p>
-            <div className={classNames(styles["progress-bar"], playAnimation == "error" && styles["error"])} />
-            <img onClick={() => setPlayAnimation(false)} src={"exit-icon.png"} className={styles["animation-exit-icon"]}/>
-        </div>
-    )
-}
 
   return (
     <div className={styles.main}>
       <FixedMenu currentNavSelection={currentNavSelection} />
       <AboutSection />
-      <ProjectSection />
-      <ExperienceSection />
-      <ContactSection runEmailAnimation={runEmailAnimation}/>
-      {playAnimation && <EmailAnimation />}
-
+      <ProjectSection scrollAnimationList={scrollAnimationList} />
+      <ExperienceSection scrollAnimationList={scrollAnimationList} />
+      <ContactSection runEmailAnimation={runEmailAnimation} scrollAnimationList={scrollAnimationList}/>
+      <EmailAnimation playAnimation={playAnimation} setPlayAnimation={setPlayAnimation}/>
     </div>
   )
 }

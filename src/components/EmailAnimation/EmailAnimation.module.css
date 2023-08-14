@@ -1,0 +1,77 @@
+.email-animation-card {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid black;
+    overflow: hidden;
+    opacity: 0;
+    background-color: #f8f8fa;
+}
+
+.email-animation-card.animated {
+    animation: slide-in .5s ease-in-out forwards;
+    animation-delay: .5s;
+}
+
+
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-300px);
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.confirm-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0px;
+    background-color: #6fdfaf;
+}
+
+.progress-bar.animated {
+    animation: drain-bar 10.1s forwards linear;
+}
+
+
+
+.progress-bar.error {
+    background-color: #d75a4a;
+}
+
+@keyframes drain-bar {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+.animation-exit-icon {
+    width: 15px;
+    height: 15px;
+    opacity: .3;
+    margin-left: 30px;
+}
+
+.animation-exit-icon:hover {
+    opacity: .8;
+}

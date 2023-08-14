@@ -15,6 +15,18 @@
 .intro-text {
     margin-top: 80px;
     font-size: 30px;
+    animation: fade-slide .7s ease-in-out forwards;
+}
+
+@keyframes fade-slide {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 .main-text {
@@ -39,7 +51,27 @@
     border-radius: 45px;
     color: black;
     align-content: center;
+    animation: shake .3s ease-in-out forwards;
+    animation-delay: 1.4s;
 }
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+} 
 
 .button:hover {
     background-color: black;

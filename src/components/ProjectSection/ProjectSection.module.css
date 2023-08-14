@@ -5,6 +5,29 @@
     overflow-x: hidden;
     padding-bottom: 80px;
     position: relative;
+    transition: opacity ease-in-out 1s;
+    opacity: 0;
+}
+
+.holder.fade-in {
+    animation: slide-fade-in 1.5s ease-in-out forwards;
+
+}
+
+@keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 .title {
