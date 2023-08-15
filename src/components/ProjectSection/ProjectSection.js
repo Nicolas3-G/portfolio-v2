@@ -79,12 +79,12 @@ const ProjectSection = ({ scrollAnimationList }) => {
                         {/* FOCUSED(selected) PROJECT HTML*/}
                         <div className={styles["focused-project-left-section"]}>
                             <h3 className={styles["focused-project-title"]}>{title}</h3>
-                            <p className={styles["focused-project-desc"]}>Crypto Secure is a cutting-edge web application built using Next.js, React, and HTML that empowers users to manage their cryptocurrency holdings with confidence and security. Whether you're a seasoned crypto investor or just getting started, Crypto Secure provides a user-friendly platform to track, monitor, and analyze your digital assets in real-time.</p>
+                            <p className={styles["focused-project-desc"]}>Crypto Secure is a cutting-edge web application built using Next.js, React, and HTML that empowers users to manage their cryptocurrency holdings with confidence and security. Whether you&apos;re a seasoned crypto investor or just getting started, Crypto Secure provides a user-friendly platform to track, monitor, and analyze your digital assets in real-time.</p>
                             <div className={styles["tech-section"]}>
                                 Tech Stack:
                                 <div className={styles["bubble-card"]}>
                                     <div className={styles["bubble-holder"]}>
-                                        {skills.map(skill => <SkillBubble {...bubbleDataObject[skill]} />)}
+                                        {skills.map((skill, idx) => <SkillBubble key={idx}  {...bubbleDataObject[skill]} />)}
                                     </div>
                                 </div>
 
