@@ -15,14 +15,14 @@
 
 .email-animation-card.animated {
     animation: slide-in .5s ease-in-out forwards;
-    animation-delay: .5s;
+    animation-delay: .3s;
 }
 
 
 
 @keyframes slide-in {
     0% {
-        transform: translateX(-300px);
+        transform: translateX(100px);
     }
 
     100% {

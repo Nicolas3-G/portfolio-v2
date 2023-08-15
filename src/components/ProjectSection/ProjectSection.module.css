@@ -2,7 +2,6 @@
     color: black;
     margin-left: 300px;
     margin-top: 50px;
-    overflow-x: hidden;
     padding-bottom: 80px;
     position: relative;
     transition: opacity ease-in-out 1s;
@@ -184,17 +183,27 @@
 
 .close-button {
     position: absolute;
-    top: 80px;
+    top: 70px;
     right: 50px;
     background-color: transparent;
     padding: 2px 5px;
     border-radius: 15px;
     border: none;
+    z-index: 100;
 }
 
 .exit-icon {
     width: 20px;
     height: 20px;
+    transition: transform 0.2s ease-in-out;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+}
+
+.exit-icon:hover {
+    transform: scale(1.15);
 }
 
 .focused-button-bar {

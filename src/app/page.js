@@ -44,7 +44,7 @@ export default function Home() {
     if (scrollY > 1100 && !scrollAnimationList[1]) {
       setScrollAnimationList((prev) => ([prev[0], true, prev[2]]))
     }
-    if (scrollY > 2000 && !scrollAnimationList[2]) {
+    if (scrollY > 1800 && !scrollAnimationList[2]) {
       setScrollAnimationList((prev) => ([prev[0], prev[1], true]))
     }
   }
@@ -68,7 +68,7 @@ export default function Home() {
       <ProjectSection scrollAnimationList={scrollAnimationList} />
       <ExperienceSection scrollAnimationList={scrollAnimationList} />
       <ContactSection runEmailAnimation={runEmailAnimation} scrollAnimationList={scrollAnimationList}/>
-      <EmailAnimation playAnimation={playAnimation} setPlayAnimation={setPlayAnimation}/>
+      {playAnimation && <EmailAnimation playAnimation={playAnimation} setPlayAnimation={setPlayAnimation}/>}
     </div>
   )
 }
