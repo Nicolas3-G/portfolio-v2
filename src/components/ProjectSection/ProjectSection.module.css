@@ -381,7 +381,12 @@
     }
 
     .card-holder {
+        height: 100%;
         display: flex;
         flex-direction: column;
+    }
+
+    .project-card {
+        height: fit-content;
     }
 }

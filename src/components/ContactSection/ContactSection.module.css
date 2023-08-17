@@ -263,11 +263,12 @@
     }
 
     .tweet-feed {
-        max-height: 100%;
+        height: 75%;
     }
     
     .social-card {
         margin-top: 20px;
     }
+
 
 }
