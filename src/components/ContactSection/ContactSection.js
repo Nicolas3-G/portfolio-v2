@@ -67,7 +67,7 @@ const ContactSection = ({ runEmailAnimation, scrollAnimationList }) => {
     return (
         <>
             <a name="contact" />
-            <div style={{height: "100vh", overflowY: "hidden"}}>
+            <div className={styles["overflow-holder"]}>
                 <div className={classNames(styles.holder, scrollAnimationList[2] && styles["fade-in"])}>
                     <h2 className={styles.title}>Contact</h2>
                     <div className={styles.grid}>

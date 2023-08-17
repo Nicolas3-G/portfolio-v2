@@ -231,3 +231,27 @@
     overflow-x: hidden;
     scrollbar-width: none;
 }
+
+.overflow-holder {
+    height: 120vh;
+    overflow-y: hidden;
+}
+
+@media (max-width: 600px) {
+    .holder {
+        margin: unset;
+        height: fit-content;
+        overflow-y: hidden;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+
+
+    .tweet-card {}
+
+}

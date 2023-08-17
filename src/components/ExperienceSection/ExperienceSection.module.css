@@ -41,7 +41,7 @@
     height: 45%;
     display: flex;
     flex-direction: row;
-    
+
 }
 
 .resume-holder {
@@ -123,7 +123,7 @@
     margin-left: auto;
     font-weight: bold;
     margin-right: 10px;
-    
+
 }
 
 .skills-holder {
@@ -165,7 +165,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .overlay-ui-holder {
@@ -191,4 +191,72 @@
 
 .resume-image {
     max-width: 100%;
+}
+
+.overflow-holder {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.highlights-main-title {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .holder {
+        margin: unset;
+        height: 140vh;
+        max-height: 140vh !important;
+    }
+
+    .overflow-holder {
+        height: 140vh;
+    }
+
+    .skills-holder {
+        width: 80%;
+        padding-top: 5px;
+        height: fit-content
+    }
+
+    .highlight-card {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .skill-icon {
+        width: 40px;
+    }
+
+    .skill-holder {
+        width: 60px;
+        height: fit-content;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .skill-title {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .highlight-holder {
+        width: 100%;
+    }
+
+    .resume-holder {
+        margin-bottom: 19px;
+        width: 60%;
+    }
+    
+    .button {
+        height: 40px;
+        width: 100%;
+    }
+    
+    .highlights-main-title {
+        margin-top: 0px;
+    }
 }

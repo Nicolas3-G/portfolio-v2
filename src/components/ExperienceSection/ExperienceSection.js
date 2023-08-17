@@ -59,12 +59,12 @@ const ExperienceSection = ({ scrollAnimationList }) => {
                         <img src="resume-image.png" className={styles["resume-image"]} />
                     </div>
                 </div>}
-            <div style={{height: "100vh", overflow: "hidden"}}>
+            <div className={styles["overflow-holder"]}>
                 <div className={classNames(styles.holder, scrollAnimationList[1] && styles["fade-in"])}>
                     <h2 className={styles.title}>Experience</h2>
                     <div className={styles["highlight-card"]}>
                         <div className={styles["highlight-holder"]}>
-                            <h3 style={{ textAlign: "center" }}>Highlights</h3>
+                            <h3 className={styles["highlights-main-title"]}>Highlights</h3>
                             <div className={styles["highlight"]}>
                                 <h5 className={styles["highlight-title"]}>Junior Software Engineer</h5>
                                 <img className={styles["highlight-icon"]} src="preframing-logo.png" />
@@ -86,7 +86,7 @@ const ExperienceSection = ({ scrollAnimationList }) => {
                         </div>
                         <div className={styles["mid-line"]} />
                         <div className={styles["resume-holder"]}>
-                            <h3>Resume</h3>
+                            <h3 className={styles["resume-title"]}>Resume</h3>
                             <img className={styles["resume-icon"]} src="resume-icon.png" alt="resume" />
                             <button onClick={handleDownloadClick} className={styles.button}>Download</button>
                             <button onClick={handleViewClick} className={styles.button}>View</button>

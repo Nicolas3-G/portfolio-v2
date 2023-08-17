@@ -85,3 +85,24 @@
 .test {
     color: #838282
 }
+
+@media (max-width: 600px) {
+    .holder {
+        margin: unset;
+    }
+
+    .main-text {
+        font-size: 50px;
+        margin: 0 auto;
+        width: 92vw;
+    }
+
+    .intro-text {
+        font-size: 25px;
+    }
+
+    .desc-text {
+        font-size: 20px;
+        width: 90vw;
+    }
+}

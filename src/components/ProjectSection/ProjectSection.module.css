@@ -374,3 +374,14 @@
     font-weight: bold;
     background-color: transparent !important;
 }
+
+@media (max-width: 600px) {
+    .holder {
+        margin: unset;
+    }
+
+    .card-holder {
+        display: flex;
+        flex-direction: column;
+    }
+}
