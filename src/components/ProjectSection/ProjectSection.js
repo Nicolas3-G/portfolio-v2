@@ -55,7 +55,7 @@ const ProjectSection = ({ scrollAnimationList }) => {
         const [displayOverlay, setDisplayOverlay] = useState(false);
 
         const imgPath = `project-images/${assetPath}.png`;
-        const gifPath = `project-images/${assetPath}-gif.gif`;
+        const vidPath = `project-images/${assetPath}-vid.mp4`;
 
         const handleProjectClick = () => {
             setSelectedProject(id);
@@ -91,7 +91,10 @@ const ProjectSection = ({ scrollAnimationList }) => {
                             </div>
                         </div>
                         <div className={styles["focused-project-right-section"]}>
-                            <img src={gifPath} className={styles["focused-project-image"]} />
+                            <video autoPlay={true} loop className={styles["focused-project-image"]}>
+                                <source src={vidPath} type="video/mp4" />
+                            </video>
+                            {/* <img src={gifPath} className={styles["focused-project-image"]} /> */}
                             <div className={styles["focused-button-bar"]}>
                                 <a style={{ textDecoration: "none" }} target="_blank" href={gitLink}><button className={`${styles["focused-button"]} ${styles["two"]}`}><img className={styles["focused-button-icon"]} src="socials/github-icon.png" /><p>Github</p></button></a>
                                 <a style={{ textDecoration: "none" }} href={siteLink} target="_blank"><button className={styles["focused-button"]}><img className={styles["focused-button-icon"]} src="live-site-icon.png" /><p>Live Site</p></button></a>
@@ -113,9 +116,10 @@ const ProjectSection = ({ scrollAnimationList }) => {
     }
 
     // Project descriptions
-    const cryptoSecureDesc = "Crypto Secure is a cutting-edge web application built using Next.js, React, and HTML that empowers users to manage their cryptocurrency holdings with confidence and security. Whether you're a seasoned crypto investor or just getting started, Crypto Secure provides a user-friendly platform to track, monitor, and analyze your digital assets in real-time.";
-    const NextriDesc = "Modern e-commerce website powered by Next.js, React, and HTML. Elevate your shopping with a seamless user experience. Explore and purchase diverse clothing items from various brands. Your go-to destination for effortless style. ";
+    const cryptoSecureDesc = "Crypto Secure is a cutting-edge multi-page web application built using Next.js, React, and HTML that empowers users to manage their cryptocurrency holdings with confidence and security. Whether you're a seasoned crypto investor or just getting started, Crypto Secure provides a user-friendly platform to track, monitor, and analyze your digital assets in real-time.";
+    const NextriDesc = "Nextri: A modern e-commerce website powered by Next.js, React, and HTML. Elevate your shopping with a seamless user experience. Explore and purchase diverse clothing items from various brands. Your go-to destination for effortless style. ";
     const applicantDesc = "Applicant.io is an engaging browser-based simulation game that empowers users to craft their own success by constructing businesses from scratch. Developed using Next.js, React, HTML, and JavaScript, this project draws inspiration from a cherished childhood game. A labor of passion, it remains an ongoing endeavor, driven by a commitment to delivering a captivating and nostalgic experience.";
+    const devbotDesc = "DevBot Chat is a group of interactive chatbots at your service. Comprised of three distinct chatbots, each tailored for a unique role, this project has granted me insights into harnessing reusable React components effectively. My future roadmap for this project includes the integration of specialized LLM AI Models to serve users flexible and in depth answers to all their questions!";
 
     return (
         <a name="projects">
@@ -127,7 +131,7 @@ const ProjectSection = ({ scrollAnimationList }) => {
                     <ProjectCard skills={["html", "css", "javascript", "next", "react"]} title="CryptoSecure" fullDesc={cryptoSecureDesc} quickDesc="Streamlined crypto banking platform" assetPath="crypto-secure" siteLink="https://crypto-secure.vercel.app/" gitLink="https://github.com/Nicolas3-G/CryptoSecure" id={1} />
                     <ProjectCard skills={["html", "css", "javascript", "next", "react"]} title="Nextri" fullDesc={NextriDesc} quickDesc="User-friendly clothing e-commerce site" assetPath="nextri"  id={2} siteLink="https://nextri.vercel.app/" gitLink="https://github.com/Nicolas3-G/Nextri" />
                     <ProjectCard skills={["html", "css", "javascript", "react"]} title="Applicant.io" fullDesc={applicantDesc} quickDesc="Browser game simulating real-life decisions" assetPath="applicant-io" siteLink="https://applicant-io.vercel.app/" gitLink="https://github.com/Nicolas3-G/sim-game" id={3} />
-                    <ProjectCard skills={["html", "css", "javascript", "react"]} title="DevBot Chat" quickDesc="A trio of interactive chatbots at your service" assetPath="devbot" siteLink="https://nicolas3-g.github.io/devbot/" gitLink="https://github.com/Nicolas3-G/devbot" id={4} />
+                    <ProjectCard skills={["html", "css", "javascript", "react"]} title="DevBot Chat" fullDesc={devbotDesc} quickDesc="A trio of interactive chatbots at your service" assetPath="devbot" siteLink="https://nicolas3-g.github.io/devbot/" gitLink="https://github.com/Nicolas3-G/devbot" id={4} />
                     {selectedProject && <button className={styles["close-button"]} onClick={() => setSelectedProject(null)}><img className={styles["exit-icon"]} src="exit-icon.png" /></button>}
                 </div>
             </div>
