@@ -403,6 +403,8 @@
     .holder {
         margin: unset;
         height: fit-content;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
     }
 
     .card-holder {
