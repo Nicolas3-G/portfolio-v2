@@ -233,15 +233,20 @@
 }
 
 .overflow-holder {
-    height: 120vh;
+    height: 100vh;
     overflow-y: hidden;
 }
 
 @media (max-width: 600px) {
     .holder {
         margin: unset;
+        margin-top: 30%;
         height: fit-content;
         overflow-y: hidden;
+    }
+
+    .overflow-holder {
+        height: fit-content;
     }
 
     .grid {
@@ -250,8 +255,19 @@
         width: 80%;
     }
 
+    .tweet-card {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        margin: 20px 0;
+    }
 
-
-    .tweet-card {}
+    .tweet-feed {
+        max-height: 100%;
+    }
+    
+    .social-card {
+        margin-top: 20px;
+    }
 
 }

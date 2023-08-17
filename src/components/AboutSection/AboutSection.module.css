@@ -93,7 +93,7 @@
 
     .main-text {
         font-size: 50px;
-        margin: 0 auto;
+        margin: 50px auto;
         width: 92vw;
     }
 
@@ -104,5 +104,11 @@
     .desc-text {
         font-size: 20px;
         width: 90vw;
+    }
+
+    .button {
+        width: 80%;
+        height: 60px;
+        font-size: 18px;
     }
 }

@@ -113,4 +113,8 @@
         position: unset;
         width: 100%;
     }
+
+    .social-bar {
+        margin-bottom: 80px;
+    }
 }
