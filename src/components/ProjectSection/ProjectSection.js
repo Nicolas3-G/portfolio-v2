@@ -81,7 +81,7 @@ const ProjectSection = ({ scrollAnimationList }) => {
                             <h3 className={styles["focused-project-title"]}>{title}</h3>
                             <p className={styles["focused-project-desc"]}>{fullDesc}</p>
                             <div className={styles["tech-section"]}>
-                                Tech Stack:
+                                <p className={styles["tech-section-title"]}>Tech Stack<span className={styles["colon"]}>:</span></p>
                                 <div className={styles["bubble-card"]}>
                                     <div className={styles["bubble-holder"]}>
                                         {skills.map((skill, idx) => <SkillBubble key={idx}  {...bubbleDataObject[skill]} />)}
