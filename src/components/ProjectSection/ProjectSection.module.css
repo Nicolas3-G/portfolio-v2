@@ -395,7 +395,8 @@
     }
 
     .project-card.selected {
-        width: 80%;
+        width: 100%;
+        /* margin: 20px 0px; */
         display: flex;
         flex-direction: column;
     }
@@ -432,6 +433,12 @@
         margin: 20px 10px;
         padding: 5px 15px;
         font-size: 20px;
+    }
+
+    .project-card.not-selected {
+        visibility: unset;
+        width: 100%;
+
     }
 }
 
