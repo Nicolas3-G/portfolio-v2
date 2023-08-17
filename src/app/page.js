@@ -17,7 +17,7 @@ export default function Home() {
   const [playAnimation, setPlayAnimation] = useState(null);
   const [scrollAnimationList, setScrollAnimationList] = useState([false, false, false]);
 
-  useEffect(() => {console.log("LOGGING PLAY ANIMATION (email):", playAnimation)}, [playAnimation])
+  useEffect(() => { console.log("LOGGING PLAY ANIMATION (email):", playAnimation) }, [playAnimation])
 
   const runEmailAnimation = (type) => {
     setPlayAnimation(type);
@@ -27,6 +27,7 @@ export default function Home() {
   const handleScroll = () => {
     const scrollY = window.scrollY;
     // playAnimation && setPlayAnimation(false);
+
     if (scrollY > 500 && scrollY < 1300) {
       setCurrentNavSelection("Projects")
     } else if (scrollY >= 1300 && scrollY < 2300) {
@@ -38,18 +39,31 @@ export default function Home() {
     }
     // Handle Scroll animations
     // Updates state list that tracks which animation to fire and which has fired
-    if (scrollY > 100 && !scrollAnimationList[0]) {
-      setScrollAnimationList((prev) => ([true, prev[1], prev[2]]))
-    } 
-    if (scrollY > 1100 && !scrollAnimationList[1]) {
-      setScrollAnimationList((prev) => ([prev[0], true, prev[2]]))
+    if (window.innerWidth > 1400) {
+      if (scrollY > 100 && !scrollAnimationList[0]) {
+        setScrollAnimationList((prev) => ([true, prev[1], prev[2]]))
+      }
+      if (scrollY > 1100 && !scrollAnimationList[1]) {
+        setScrollAnimationList((prev) => ([prev[0], true, prev[2]]))
+      }
+      if (scrollY > 1800 && !scrollAnimationList[2]) {
+        setScrollAnimationList((prev) => ([prev[0], prev[1], true]))
+      }
+    } else  {
+      if (scrollY > 950 && !scrollAnimationList[0]) {
+        setScrollAnimationList((prev) => ([true, prev[1], prev[2]]))
+      }
+      if (scrollY > 2100 && !scrollAnimationList[1]) {
+        setScrollAnimationList((prev) => ([prev[0], true, prev[2]]))
+      }
+      if (scrollY > 3300 && !scrollAnimationList[2]) {
+        setScrollAnimationList((prev) => ([prev[0], prev[1], true]))
+      }
     }
-    if (scrollY > 1800 && !scrollAnimationList[2]) {
-      setScrollAnimationList((prev) => ([prev[0], prev[1], true]))
-    }
+
   }
 
-  useEffect(() => {console.log("Logging animation list: ", scrollAnimationList)}, [scrollAnimationList])
+  useEffect(() => { console.log("Logging animation list: ", scrollAnimationList) }, [scrollAnimationList])
 
 
   useEffect(() => {
@@ -67,8 +81,8 @@ export default function Home() {
       <AboutSection />
       <ProjectSection scrollAnimationList={scrollAnimationList} />
       <ExperienceSection scrollAnimationList={scrollAnimationList} />
-      <ContactSection runEmailAnimation={runEmailAnimation} scrollAnimationList={scrollAnimationList}/>
-      {playAnimation && <EmailAnimation playAnimation={playAnimation} setPlayAnimation={setPlayAnimation}/>}
+      <ContactSection runEmailAnimation={runEmailAnimation} scrollAnimationList={scrollAnimationList} />
+      {playAnimation && <EmailAnimation playAnimation={playAnimation} setPlayAnimation={setPlayAnimation} />}
     </div>
   )
 }
