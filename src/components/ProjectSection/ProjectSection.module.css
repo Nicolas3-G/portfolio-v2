@@ -375,6 +375,14 @@
     background-color: transparent !important;
 }
 
+.close-button-mobile {
+    display: none;
+}
+
+.exit-icon-mobile {
+    display: none;
+}
+
 @media (max-width: 600px) {
     .holder {
         margin: unset;
@@ -462,6 +470,29 @@
 
     .selected.selected-4 {
         margin-top: 20px;
+    }
+
+    .close-button-mobile {
+        display: unset;
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 3;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .exit-icon-mobile {
+        display: unset;
+        position: relative;
+        width: 20px;
+        height: 20px;
+    }
+
+    .close-button {
+        display: none;
     }
     
 }

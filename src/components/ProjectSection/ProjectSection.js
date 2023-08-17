@@ -58,7 +58,13 @@ const ProjectSection = ({ scrollAnimationList }) => {
         const vidPath = `project-images/${assetPath}-vid.mp4`;
 
         const handleProjectClick = () => {
+            if (selectedProject == id) return;
             setSelectedProject(id);
+        }
+
+        const handleMobileExitClick = () => {
+            console.log("mobile exit click")
+            setSelectedProject(null);
         }
 
         return (
@@ -101,7 +107,7 @@ const ProjectSection = ({ scrollAnimationList }) => {
 
                             </div>
                         </div>
-
+                        <button className={styles["close-button-mobile"]} onClick={handleMobileExitClick}><img className={styles["exit-icon-mobile"]} src="exit-icon.png" /></button>
 
                     </>}
 
