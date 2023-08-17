@@ -56,7 +56,7 @@ const ExperienceSection = ({ scrollAnimationList }) => {
                 <div onClick={handleOverlayClick} className={styles["overlay"]}>
                     <img onClick={() => setShowOverlay(false)} src="exit-icon.png" className={styles["overlay-exit-button"]} />
                     <div className={styles["overlay-ui-holder"]}>
-                        <img src="resume-image.jpg" className={styles["resume-image"]} />
+                        <img src="resume-image.png" className={styles["resume-image"]} />
                     </div>
                 </div>}
             <div style={{height: "100vh", overflow: "hidden"}}>
