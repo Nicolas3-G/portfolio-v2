@@ -95,6 +95,7 @@
     border-radius: 15px;
     width: 100%;
     grid-area: socials;
+    overflow: hidden;
 }
 
 .tweet-card {
@@ -134,6 +135,13 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.social-link-text {
+    font-weight: bold;
+    font-size: 14px;
+    word-wrap: break-word;
 }
 
 .social-item a {
@@ -235,6 +243,43 @@
 .overflow-holder {
     height: 100vh;
     overflow-y: hidden;
+}
+
+@media (max-width: 1400px) {
+    .social-link-text {
+        width: 95px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .social-link-text {
+        width: unset;
+    }
+
+    .holder {
+        margin: unset;
+        height: fit-content;
+        margin-top: 7%;
+    }
+
+    .overflow-holder {
+        height: fit-content;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+    }
+
+    .social-card {
+        margin-top: 20px;
+    }
+
+    .tweet-card {
+        margin: 20px 0px;
+    }
+
 }
 
 @media (max-width: 600px) {

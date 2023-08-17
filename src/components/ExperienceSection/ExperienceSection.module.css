@@ -202,15 +202,49 @@
     text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1400px) {
     .holder {
         margin: unset;
-        height: 140vh;
-        max-height: 140vh !important;
+        height: fit-content;
+        max-height: unset;
+    }
+
+    .highlight-card {
+        width: 60%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column-reverse; 
+    }
+
+    .highlight-holder {
+        width: 80%;
     }
 
     .overflow-holder {
-        height: 140vh;
+        height: fit-content;
+    }
+
+    .skills-holder {
+        width: 60%;
+        padding-top: 5px;
+        height: fit-content
+    }
+
+    
+
+
+
+}
+
+@media (max-width: 600px) {
+    .holder {
+        margin: unset;
+        height: fit-content;
+        max-height: unset !important;
+    }
+
+    .overflow-holder {
+        height: fit-content;
     }
 
     .skills-holder {

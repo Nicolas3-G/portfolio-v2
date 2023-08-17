@@ -383,7 +383,23 @@
     display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1400px) {
+    .holder {
+        margin: unset;
+        height: fit-content;
+    }
+
+    .bubble-element {
+        border-radius: 15px;
+        font-size: 12px;
+        display: grid;
+        place-items: center;
+        margin: 5px 5px;
+        width: 55px;
+    }
+}
+
+@media (max-width: 800px) {
     .holder {
         margin: unset;
         height: fit-content;
@@ -450,6 +466,7 @@
     .project-card.not-selected {
         visibility: unset;
         width: 100%;
+        margin-bottom: 20px;
 
     }
 

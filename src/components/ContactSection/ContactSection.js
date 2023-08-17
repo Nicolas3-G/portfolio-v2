@@ -11,7 +11,7 @@ const ContactSection = ({ runEmailAnimation, scrollAnimationList }) => {
         return (
             <div className={styles["social-item"]}>
                 <img src={img} className={styles["social-icon"]} />
-                <a style={{ fontWeight: "bold", fontSize: "14px" }} href="#">{link}</a>
+                <a className={styles["social-link-text"]} href="#">{link}</a>
             </div>
         )
     }
