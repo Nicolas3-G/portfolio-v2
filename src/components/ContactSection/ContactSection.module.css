@@ -240,7 +240,7 @@
 @media (max-width: 600px) {
     .holder {
         margin: unset;
-        margin-top: 30%;
+        margin-top: 15%;
         height: fit-content;
         overflow-y: hidden;
     }
