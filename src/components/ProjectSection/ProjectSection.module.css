@@ -378,6 +378,7 @@
 @media (max-width: 600px) {
     .holder {
         margin: unset;
+        height: fit-content;
     }
 
     .card-holder {
@@ -386,6 +387,7 @@
         display: flex;
         padding: 30px 0px;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     .project-card {
@@ -400,6 +402,8 @@
         display: flex;
         flex-direction: column;
     }
+
+    
 
     .close-button {
         top: 100px;
@@ -440,5 +444,25 @@
         width: 100%;
 
     }
+
+    .project-card:hover {
+        box-shadow: 11px 11px 130px 70px rgba(206, 212, 224, .32);
+        transform: unset;
+    }
+
+    .card-holder.focused-view-1 {
+        grid-template-rows: 100% 0;
+        grid-template-columns: 100% 0%;
+    
+    }
+    
+    .selected.selected-3 {
+        margin: 20px 0;
+    }
+
+    .selected.selected-4 {
+        margin-top: 20px;
+    }
+    
 }
 

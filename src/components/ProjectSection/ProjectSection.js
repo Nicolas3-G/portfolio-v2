@@ -62,7 +62,7 @@ const ProjectSection = ({ scrollAnimationList }) => {
         }
 
         return (
-            <div onClick={handleProjectClick} onMouseEnter={() => setDisplayOverlay(true)} onMouseLeave={() => setDisplayOverlay(false)} className={classNames(styles["project-card"], selectedProject == id && styles["selected"], (selectedProject && selectedProject != id) && styles["not-selected"])}>
+            <div onClick={handleProjectClick} onMouseEnter={() => setDisplayOverlay(true)} onMouseLeave={() => setDisplayOverlay(false)} className={classNames(styles["project-card"], selectedProject == id && styles["selected"], (selectedProject && selectedProject != id) && styles["not-selected"], styles[`selected-${id}`])}>
                 {selectedProject != id ?
                     <>
                         <img src={imgPath} className={styles["project-image"]} />
