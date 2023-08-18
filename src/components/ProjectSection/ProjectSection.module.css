@@ -399,6 +399,12 @@
     }
 }
 
+@media (max-width: 450px) {
+    .project-card {
+        text-align: center;
+    }
+}
+
 @media (max-width: 800px) {
     .holder {
         margin: unset;
@@ -419,7 +425,7 @@
     .project-card {
         height: fit-content;
         padding: 20px;
-        text-align: center;
+        
     }
 
     .project-card.selected {
@@ -427,6 +433,7 @@
         /* margin: 20px 0px; */
         display: flex;
         flex-direction: column;
+        text-align: center;
     }
 
     

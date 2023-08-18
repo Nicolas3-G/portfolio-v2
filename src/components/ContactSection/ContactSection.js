@@ -34,6 +34,8 @@ const ContactSection = ({ runEmailAnimation, scrollAnimationList }) => {
             <div className={styles["tweet-card"]}>
                 <h4 style={{ textAlign: "center", margin: "15px" }}>Latest Tweets</h4>
                 <div className={styles["tweet-feed"]}>
+                    <Tweet date="16 Aug" text="Day 31 of #100DaysOfCode Today I finished and deployed my portfolio v2!!🎉 I've learned so much since making my first portfolio, allowing for a massive upgrade this time around 💪 Check it out and let me know what you think! 🙏 http://nicdev.co" />
+                    <Tweet date="15 Aug" text="Day 30 of #100DaysOfCode More portfolio work today, got a bunch of animations added and fixed some bugs Also did a test deploy, all set on that, just got to add a bit of text to the project descriptions 💪 Also gotta make it responsive but that's for later 🤣" />
                     <Tweet date="14 Aug" text="Which title style is better? 🧐 Working on deploying my business/life sim game Let me know what you think! 🙏🙏 #buildinpublic #design #indiedev" />
                     <Tweet date="13 Aug" text="Day 29 of #100DaysOfCode Got some more work done on my portfolio 🔥 Reworked the tech bubble section, looks really smooth now 💪 Added a latest tweets section and finally updated my resume highlight 😎 Almost done 🤞 Check it out" />
                     <Tweet date="10 Aug" text="Day #28 of #100DaysOfCode Today I did some work stuff and also got to work on my portfolio again! I added some gifs to each project and connected all the links, still experimenting with the tech section but getting there 💪 Tomorrow should be done! 🚀" />
