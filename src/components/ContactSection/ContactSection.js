@@ -54,7 +54,7 @@ const ContactSection = ({ runEmailAnimation, scrollAnimationList }) => {
                 <div className={styles["tweet-content"]}>
                     <div className={styles["tweet-top-row"]}>
                         <h5 style={{ margin: "0", fontSize: "12px" }}>DangSnake</h5>
-                        <p className={styles["user-at"]}>@dangsn...</p>
+                        <p className={styles["user-at"]}>@dang..</p>
                         <p className={styles["time-text"]}>· {date}</p>
                     </div>
                     <p className={styles["tweet-text"]}>{text}</p>
