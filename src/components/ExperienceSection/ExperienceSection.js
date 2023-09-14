@@ -106,6 +106,7 @@ const ExperienceSection = ({ scrollAnimationList }) => {
                             <Skill name="Python" img="skill-icons/python-icon.png" />
                             <Skill name="Git" img="skill-icons/git-icon.png" />
                             <Skill name="Sass" img="skill-icons/sass-icon.png" />
+                            <Skill name="Tailwind CSS" img="skill-icons/tailwind-icon.png" />
                         </div>
                     </div>
                 </div>
