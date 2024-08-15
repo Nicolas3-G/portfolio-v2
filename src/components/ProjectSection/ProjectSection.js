@@ -37,6 +37,11 @@ const ProjectSection = ({ scrollAnimationList }) => {
             style: "node",
             image: "skill-icons/node-icon-purple.png"
         },
+        firebase: {
+            title: "Firebase",
+            style: "firebase",
+            image: "skill-icons/firebase-icon-blue.png"
+        },
     }
 
     const SkillBubble = ({ title, style, image }) => {
@@ -102,7 +107,7 @@ const ProjectSection = ({ scrollAnimationList }) => {
                             </video>
                             {/* <img src={gifPath} className={styles["focused-project-image"]} /> */}
                             <div className={styles["focused-button-bar"]}>
-                                <a style={{ textDecoration: "none" }} target="_blank" href={gitLink}><button className={`${styles["focused-button"]} ${styles["two"]}`}><img className={styles["focused-button-icon"]} src="socials/github-icon.png" /><p>Github</p></button></a>
+                                {gitLink != "#" && <a style={{ textDecoration: "none" }} target="_blank" href={gitLink}><button className={`${styles["focused-button"]} ${styles["two"]}`}><img className={styles["focused-button-icon"]} src="socials/github-icon.png" /><p>Github</p></button></a>}
                                 <a style={{ textDecoration: "none" }} href={siteLink} target="_blank"><button className={styles["focused-button"]}><img className={styles["focused-button-icon"]} src="live-site-icon.png" /><p>Live Site</p></button></a>
 
                             </div>
@@ -122,10 +127,10 @@ const ProjectSection = ({ scrollAnimationList }) => {
     }
 
     // Project descriptions
-    const cryptoSecureDesc = "Crypto Secure is a cutting-edge multi-page web application built using Next.js, React, and HTML that empowers users to manage their cryptocurrency holdings with confidence and security. Whether you're a seasoned crypto investor or just getting started, Crypto Secure provides a user-friendly platform to track, monitor, and analyze your digital assets in real-time.";
-    const NextriDesc = "Nextri: A modern e-commerce website powered by Next.js, React, and HTML. Elevate your shopping with a seamless user experience. Explore and purchase diverse clothing items from various brands. Your go-to destination for effortless style. ";
-    const applicantDesc = "Applicant.io is an engaging browser-based simulation game that empowers users to craft their own success by constructing businesses from scratch. Developed using Next.js, React, HTML, and JavaScript, this project draws inspiration from a cherished childhood game. A labor of passion, it remains an ongoing endeavor, driven by a commitment to delivering a captivating and nostalgic experience.";
-    const devbotDesc = "DevBot Chat is a group of interactive chatbots at your service. Comprised of three distinct chatbots, each tailored for a unique role, this project has granted me insights into harnessing reusable React components effectively. My future roadmap for this project includes the integration of specialized LLM AI Models to serve users flexible and in depth answers to all their questions!";
+    const overviewDesc = "Overview World News offers a fresh perspective on global events. My contributions to this project include developing the backend, which manages all the app's content, as well as designing and implementing the article views. The app is currently in alpha testing, with ongoing efforts to prepare for the beta release in fall 2024.";
+    const oomphDesc = "For this project I was tasked with building a landing page for a in development dating app! I worked closely their designers to perfectly replicate the figma designs. Attention to detail was everything with this project and I was proud to deliver something that went beyond their expectations and within a week!";
+    const allgolfholesDesc = "All Golf Holes is a platform that provides golfers with comprehensive information on golf courses around the US. I worked on the integration of a CMS on this project to allow easy updating by the content team, and various other functionalities and improvements. The name of the game here was SEO and I learned a lot working on this one!";
+    const kickitDesc = "Kickit is a platform for finding groups, creations, and events tailored to you. This is a fullstack application that uses firebase to store user data and to deliver dynamic content. It was recently rebuilt to use Redux for state management across the whole application aswell. It's still in development, but the goal is to create a more accessible way to find and host events!";
 
     return (
         <a name="projects">
@@ -134,10 +139,10 @@ const ProjectSection = ({ scrollAnimationList }) => {
                 <div className={classNames(styles["card-holder"], selectedProject && styles[`focused-view-${selectedProject}`])}>
                     {/* Focused value checks that there is no project selected or if there is which one should be displayed */}
                     {/* ID should be set to order it appears in grid, used for click handling */}
-                    <ProjectCard skills={["html", "css", "javascript", "next", "react"]} title="CryptoSecure" fullDesc={cryptoSecureDesc} quickDesc="Streamlined crypto banking platform" assetPath="crypto-secure" siteLink="https://crypto-secure.vercel.app/" gitLink="https://github.com/Nicolas3-G/CryptoSecure" id={1} />
-                    <ProjectCard skills={["html", "css", "javascript", "next", "react"]} title="Nextri" fullDesc={NextriDesc} quickDesc="User-friendly clothing e-commerce site" assetPath="nextri"  id={2} siteLink="https://nextri.vercel.app/" gitLink="https://github.com/Nicolas3-G/Nextri" />
-                    <ProjectCard skills={["html", "css", "javascript", "react"]} title="Applicant.io" fullDesc={applicantDesc} quickDesc="Browser game simulating real-life decisions" assetPath="applicant-io" siteLink="https://applicant-io.vercel.app/" gitLink="https://github.com/Nicolas3-G/sim-game" id={3} />
-                    <ProjectCard skills={["html", "css", "javascript", "react"]} title="DevBot Chat" fullDesc={devbotDesc} quickDesc="A trio of interactive chatbots at your service" assetPath="devbot" siteLink="https://nicolas3-g.github.io/devbot/" gitLink="https://github.com/Nicolas3-G/devbot" id={4} />
+                    <ProjectCard skills={["html", "css", "javascript", "firebase", "node"]} title="Overview World News" fullDesc={overviewDesc} quickDesc="IOS App for news all around the globe" assetPath="overview" siteLink="https://www.overviewworldnews.com/" gitLink="#" id={1} />
+                    <ProjectCard skills={["html", "css", "javascript", "next", "react"]} title="Oomph Dating" fullDesc={oomphDesc} quickDesc="A landing page for a up and coming dating app" assetPath="oomph"  id={2} siteLink="https://www.oomphdating.com/" gitLink="#" />
+                    <ProjectCard skills={["html", "css", "javascript", "react", "next"]} title="All Golf Holes" fullDesc={allgolfholesDesc} quickDesc="An SEO optimized platform for all things golf" assetPath="allgolfholes" siteLink="https://www.allgolfholes.com/" gitLink="#" id={3} />
+                    <ProjectCard skills={["html", "css", "javascript", "react", "next", "firebase"]} title="Kickit" fullDesc={kickitDesc} quickDesc="A platform for groups, creations, and inspiration" assetPath="kickit" siteLink="https://kickit.vercel.app/" gitLink="#" id={4} />
                     {selectedProject && <button className={styles["close-button"]} onClick={() => setSelectedProject(null)}><img className={styles["exit-icon"]} src="exit-icon.png" /></button>}
                 </div>
             </div>

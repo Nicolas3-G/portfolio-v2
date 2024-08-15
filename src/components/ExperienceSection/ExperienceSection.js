@@ -66,22 +66,22 @@ const ExperienceSection = ({ scrollAnimationList }) => {
                         <div className={styles["highlight-holder"]}>
                             <h3 className={styles["highlights-main-title"]}>Highlights</h3>
                             <div className={styles["highlight"]}>
+                                <h5 className={styles["highlight-title"]}>Fullstack Software Engineer</h5>
+                                <img className={styles["highlight-icon"]} src="overview-logo.png" />
+                                <h6 className={styles["highlight-job-name"]}>Overview World News</h6>
+                                <p className={styles["highlight-date"]}>Dec 2023 - Present</p>
+                            </div>
+                            <div className={styles["highlight"]}>
+                                <h5 className={styles["highlight-title"]}>Freelance Software Engineer</h5>
+                                <img className={styles["highlight-icon"]} src="10xdevs-logo.png" />
+                                <h6 className={styles["highlight-job-name"]}>10X Devs</h6>
+                                <p className={styles["highlight-date"]}>Dec 2023 - Present</p>
+                            </div>
+                            <div className={styles["highlight"]}>
                                 <h5 className={styles["highlight-title"]}>Junior Software Engineer</h5>
                                 <img className={styles["highlight-icon"]} src="preframing-logo.png" />
                                 <h6 className={styles["highlight-job-name"]}>Pre Framing Corp</h6>
-                                <p className={styles["highlight-date"]}>Mar 2023 - Present</p>
-                            </div>
-                            <div className={styles["highlight"]}>
-                                <h5 className={styles["highlight-title"]}>Software Engineer Intern</h5>
-                                <img className={styles["highlight-icon"]} src="pair-pr-logo.png" />
-                                <h6 className={styles["highlight-job-name"]}>PAIR Public Relations</h6>
-                                <p className={styles["highlight-date"]}>Feb 2023 - Present</p>
-                            </div>
-                            <div className={styles["highlight"]}>
-                                <h5 className={styles["highlight-title"]}>Software Engineer</h5>
-                                <img className={styles["highlight-icon"]} src="grantaide-logo.png" />
-                                <h6 className={styles["highlight-job-name"]}>GrantAide</h6>
-                                <p className={styles["highlight-date"]}>Jan 2023 - Mar 2023</p>
+                                <p className={styles["highlight-date"]}>Mar 2023 - June 2024</p>
                             </div>
                         </div>
                         <div className={styles["mid-line"]} />

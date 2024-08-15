@@ -325,6 +325,11 @@
     color: #c964cb !important
 }
 
+.firebase {
+    background-color: #cad7f7;
+    color: #2b4c9a !important
+}
+
 .bubble-holder {
     display: flex;
     flex-direction: row;
