@@ -7,11 +7,11 @@ import classNames from "classnames";
 
 const ContactSection = ({ runEmailAnimation, scrollAnimationList }) => {
 
-    const SocialLink = ({ link, img }) => {
+    const SocialLink = ({ link, img, href="#" }) => {
         return (
             <div className={styles["social-item"]}>
                 <img src={img} className={styles["social-icon"]} />
-                <a className={styles["social-link-text"]} href="#">{link}</a>
+                <a className={styles["social-link-text"]} href={href}>{link}</a>
             </div>
         )
     }
@@ -20,10 +20,10 @@ const ContactSection = ({ runEmailAnimation, scrollAnimationList }) => {
         return (
             <div className={styles["social-card"]}>
                 <h4 style={{ textAlign: "center", margin: "15px" }}>Socials</h4>
-                <SocialLink link="Nicolas3" img="socials/linked-black-icon.png" />
-                <SocialLink link="Nicolas3-G" img="socials/github-black-icon.png" />
+                <SocialLink link="Nicolas3" img="socials/linked-black-icon.png" href="https://www.linkedin.com/in/nicolas3/" />
+                <SocialLink link="Nicolas3-G" img="socials/github-black-icon.png" href="https://github.com/Nicolas3-G" />
                 <SocialLink link="DangSnake" img="socials/twitter-black-icon.png" />
-                <SocialLink link="Nicguimont@gmail.com" img="socials/email-icon.png" />
+                <SocialLink link="Nicguimont@gmail.com" img="socials/email-icon.png" href="mailto:nicguimont@gmail.com" />
 
             </div>
         )
