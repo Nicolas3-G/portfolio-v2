@@ -45,14 +45,15 @@
     width: 200px;
     height: 50px;
     display: inline-block;
-    border: 3px solid black;
-    background-color: transparent;
+    border: 3px solid rgb(198, 22, 198);
+    background-color: rgb(198, 22, 198);
     text-decoration: none;
     border-radius: 45px;
-    color: black;
+    color: white;
     align-content: center;
     animation: shake .3s ease-in-out forwards;
     animation-delay: 1.4s;
+    font-size: 18px;
 }
 
 @keyframes shake {
@@ -74,13 +75,14 @@
 } 
 
 .button:hover {
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: black;
 }
 
 .name {
     color: rgb(198, 22, 198);
 }
+
 
 .test {
     color: #838282

@@ -1,10 +1,10 @@
 .holder {
     margin-left: 300px;
-    height: 110vh;
-    max-height: 110vh;
+    height: fit-content;
+    min-height: 110vh;
     opacity: 0;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: visible;
 }
 
 .holder.fade-in {
@@ -128,10 +128,10 @@
 
 .skills-holder {
     width: 49%;
-    height: 220px;
+    height: 330px;
     border: 3px solid black;
     border-radius: 15px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -145,7 +145,7 @@
 
 .skill-holder {
     width: 95px;
-    height: 50%;
+    height: 33.33%;
     text-align: center;
 }
 

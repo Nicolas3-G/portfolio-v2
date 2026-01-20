@@ -2,87 +2,137 @@ import { useRef, useState } from "react";
 import styles from "./ContactSection.module.css";
 import ContactForm from "./components/ContactForm";
 import classNames from "classnames";
-
-
+import { MdOutlineEmail } from "react-icons/md";
+import { IoMdPhonePortrait } from "react-icons/io";
 
 const ContactSection = ({ runEmailAnimation, scrollAnimationList }) => {
-
-    const SocialLink = ({ link, img, href="#" }) => {
-        return (
-            <div className={styles["social-item"]}>
-                <img src={img} className={styles["social-icon"]} />
-                <a className={styles["social-link-text"]} href={href}>{link}</a>
-            </div>
-        )
-    }
-
-    const SocialCard = () => {
-        return (
-            <div className={styles["social-card"]}>
-                <h4 style={{ textAlign: "center", margin: "15px" }}>Socials</h4>
-                <SocialLink link="Nicolas3" img="socials/linked-black-icon.png" href="https://www.linkedin.com/in/nicolas3/" />
-                <SocialLink link="Nicolas3-G" img="socials/github-black-icon.png" href="https://github.com/Nicolas3-G" />
-                <SocialLink link="DangSnake" img="socials/twitter-black-icon.png" />
-                <SocialLink link="Nicguimont@gmail.com" img="socials/email-icon.png" href="mailto:nicguimont@gmail.com" />
-
-            </div>
-        )
-    }
-
-    const TweetCard = () => {
-        return (
-            <div className={styles["tweet-card"]}>
-                <h4 style={{ textAlign: "center", margin: "15px" }}>Latest Tweets</h4>
-                <div className={styles["tweet-feed"]}>
-                    <Tweet date="16 Aug" text="Day 31 of #100DaysOfCode Today I finished and deployed my portfolio v2!!🎉 I've learned so much since making my first portfolio, allowing for a massive upgrade this time around 💪 Check it out and let me know what you think! 🙏 http://nicdev.co" />
-                    <Tweet date="15 Aug" text="Day 30 of #100DaysOfCode More portfolio work today, got a bunch of animations added and fixed some bugs Also did a test deploy, all set on that, just got to add a bit of text to the project descriptions 💪 Also gotta make it responsive but that's for later 🤣" />
-                    <Tweet date="14 Aug" text="Which title style is better? 🧐 Working on deploying my business/life sim game Let me know what you think! 🙏🙏 #buildinpublic #design #indiedev" />
-                    <Tweet date="13 Aug" text="Day 29 of #100DaysOfCode Got some more work done on my portfolio 🔥 Reworked the tech bubble section, looks really smooth now 💪 Added a latest tweets section and finally updated my resume highlight 😎 Almost done 🤞 Check it out" />
-                    <Tweet date="10 Aug" text="Day #28 of #100DaysOfCode Today I did some work stuff and also got to work on my portfolio again! I added some gifs to each project and connected all the links, still experimenting with the tech section but getting there 💪 Tomorrow should be done! 🚀" />
-                    <Tweet date="9 Aug" text="Day 27 of #100DaysOfCode Today worked on adding some animations and style updates ✅ Also got some work done on the project section and resume download/view functionality 👍 Getting close to wrapping it up, hopefully a couple more days of work! Check it out:" />
-                    <Tweet date="8 Aug" text="Day 26 of #100DaysOfCode Today I finally got the contact section working securely! Was difficult cause I couldn't pass an HTML element to server action or api call 🤦 Also my laptop charger was broke so I didn't get much done the past few days 💀" />
-                </div>
-            </div>
-        )
-
-    }
-
-    const Tweet = ({ date, text }) => {
-        return (
-            <div className={styles["tweet"]}>
-                <img src="twitter-pfp.jpg" className={styles["pfp-icon"]} />
-                <div className={styles["tweet-content"]}>
-                    <div className={styles["tweet-top-row"]}>
-                        <h5 style={{ margin: "0", fontSize: "12px" }}>DangSnake</h5>
-                        <p className={styles["user-at"]}>@dang..</p>
-                        <p className={styles["time-text"]}>· {date}</p>
-                    </div>
-                    <p className={styles["tweet-text"]}>{text}</p>
-
-                </div>
-
-            </div>
-        )
-    }
-
-
+  const SocialLink = ({ link, img, href = "#" }) => {
     return (
-        <>
-            <a name="contact" />
-            <div className={styles["overflow-holder"]}>
-                <div className={classNames(styles.holder, scrollAnimationList[2] && styles["fade-in"])}>
-                    <h2 className={styles.title}>Contact</h2>
-                    <div className={styles.grid}>
-                        <ContactForm runEmailAnimation={runEmailAnimation} />
-                        <SocialCard />
-                        <TweetCard />
-                    </div>
+      <a className={styles["social-item"]} href={href}>
+        <img src={img} className={styles["social-icon"]} />
+        {/* <a className={styles["social-link-text"]} href={href}>
+          {link}
+        </a> */}
+      </a>
+    );
+  };
 
-                </div>
+  const ContactBar = ({ icon, href, text }) => {
+    return (
+      <a className={styles["contact-bar"]} href={href}>
+        {icon}
+        <p className={styles["contact-bar-text"]}>{text}</p>
+      </a>
+    );
+  };
+
+  const TextAndSocialsSection = () => {
+    return (
+      <div className={styles["text-and-socials-section"]}>
+        <div>
+          <h4 className={styles["text-and-socials-section-title"]}>
+            Write me a message 👋
+          </h4>
+          <p className={styles["text-and-socials-section-subtitle"]}>
+            Tell me about your project!
+          </p>
+          <p className={styles["text-and-socials-section-description"]}>
+            Send me a email or use the form here to get in touch
+          </p>
+          <div className={styles["desktop-contact-bars-section"]}>
+            <div className={styles["contact-bars-container"]}>
+              <ContactBar
+                icon={<MdOutlineEmail size={25} color="black" />}
+                text="nicguimont@gmail.com"
+                href="mailto:nicguimont@gmail.com"
+              />
+              <ContactBar
+                icon={<IoMdPhonePortrait size={25} color="black" />}
+                text="(602) 800-3205"
+                href="tel:(602) 800-3205"
+              />
             </div>
+          </div>
+        </div>
+        <div className={styles["desktop-socials-section"]}>
+          <p className={styles["text-and-socials-section-description"]}>
+            You can also find me on these platforms:
+          </p>
+          <div className={styles["social-links-container"]}>
+            <SocialLink
+              link="Nicolas3"
+              img="socials/linked-black-icon.png"
+              href="https://www.linkedin.com/in/nicolas3/"
+            />
+            <SocialLink
+              link="Nicolas3-G"
+              img="socials/github-black-icon.png"
+              href="https://github.com/Nicolas3-G"
+            />
+            <SocialLink link="DangSnake" img="socials/twitter-black-icon.png" />
+          </div>
+        </div>
+      </div>
+    );
+  };
 
-        </>
+  const MobileContactSection = () => {
+    return (
+      <div className={styles["mobile-contact-section"]}>
+        <div className={styles["contact-bars-container"]}>
+          <ContactBar
+            icon={<MdOutlineEmail size={25} color="black" />}
+            text="nicguimont@gmail.com"
+            href="mailto:nicguimont@gmail.com"
+          />
+          <ContactBar
+            icon={<IoMdPhonePortrait size={25} color="black" />}
+            text="(602) 800-3205"
+            href="tel:(602) 800-3205"
+          />
+        </div>
+        <div>
+          <p className={styles["text-and-socials-section-description"]}>
+            You can also find me on these platforms:
+          </p>
+          <div className={styles["social-links-container"]}>
+            <SocialLink
+              link="Nicolas3"
+              img="socials/linked-black-icon.png"
+              href="https://www.linkedin.com/in/nicolas3/"
+            />
+            <SocialLink
+              link="Nicolas3-G"
+              img="socials/github-black-icon.png"
+              href="https://github.com/Nicolas3-G"
+            />
+            <SocialLink link="DangSnake" img="socials/twitter-black-icon.png" />
+          </div>
+        </div>
+      </div>
     )
-}
+  }
+
+  return (
+    <>
+      <a name="contact" />
+      <div className={styles["overflow-holder"]}>
+        <div
+          className={classNames(
+            styles.holder,
+            scrollAnimationList[2] && styles["fade-in"]
+          )}
+        >
+          <h2 className={styles.title}>Contact</h2>
+          <div className={styles.cardContainer}>
+            <TextAndSocialsSection />
+            <ContactForm runEmailAnimation={runEmailAnimation} />
+            <MobileContactSection />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default ContactSection;

@@ -1,319 +1,418 @@
 .holder {
-    margin-left: 300px;
-    display: flex;
-    justify-content: center;
-    overflow-x: hidden;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    opacity: 0;
-    position: absolute;
+  margin-left: 300px;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  opacity: 0;
 }
 
 .holder.fade-in {
-    animation: slide-fade-in 1.5s ease-in-out forwards;
-
+  animation: slide-fade-in 1.5s ease-in-out forwards;
 }
 
 @keyframes slide-fade-in {
-    0% {
-        opacity: 0;
-        transform: translateY(5%);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
 
-    30% {
-        opacity: 0;
-    }
+  30% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
-
 
 .title {
-    text-align: center;
-    font-size: 34px;
-    margin-top: 0px;
+  text-align: center;
+  font-size: 34px;
+  margin-top: 0px;
 }
 
-.grid {
-    display: grid;
-    margin-top: 0px;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 40% 60%;
-    gap: 5px 10px;
-    width: 60%;
-    height: 60%;
-    grid-template-areas: 
-        "form socials"
-        "form third"
-    ;
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0px;
+  width: 75%;
+  padding: 0px 30px;
+  height: 50%;
 }
 
 .contact-form {
-    border: 3px solid black;
-    border-radius: 15px;
-    width: 100%;
-    height: 100%;
-    grid-area: form;
+  border: 3px solid black;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  grid-area: form;
 }
 
 .form-text-holder {
-    padding: 30px;
-    height: 87%;
-    display: flex;
-    flex-direction: column;
+  padding: 30px;
+  height: 87%;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-holder {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  height: fit-content;
 }
 
 .input-field {
-    background: white;
-    border: 3px solid black;
-    border-radius: 5px;
-    padding: 5px 5px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 5px 5px;
 }
 
 .input-field.text-field {
-    height: 150px;
+  height: 150px;
 }
 
 .input-label {
-    margin-bottom: 5px;
-    font-size: 14px;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
-.social-card {
-    border: 3px solid black;
-    border-radius: 15px;
-    width: 100%;
-    grid-area: socials;
-    overflow: hidden;
+.text-and-socials-section {
+  width: 100%;
+  grid-area: socials;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-and-socials-section-title {
+  font-size: 32px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+
+.text-and-socials-section-subtitle {
+  font-size: 20px;
+  margin-top: 32px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.social-links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.text-and-socials-section-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.505);
 }
 
 .tweet-card {
-    border: 3px solid black;
-    border-radius: 15px;
-    width: 100%;
-    height: 100%;
-    grid-area: third;
-    overflow: hidden;
+  border: 3px solid black;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  grid-area: third;
+  overflow: hidden;
 }
 
 .button {
-    border: 2px solid black;
-    border-radius: 15px;
-    padding: 5px 10px;
-    background-color: black;
-    font-weight: bold;
-    color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: red;
+  font-weight: bold;
+  color: white;
 }
 
 .button:hover {
-    transition: background-color .3 ease-in-out;
-    background-color: white;
-    color: black;
+  transition: background-color 0.3 ease-in-out;
+  background-color: white;
+  color: black;
 }
 
 .social-icon {
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    margin-left: 20px;
-    margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  margin: 0;
 }
 
 .social-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-    max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  max-width: 100%;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.contact-bars-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  width: fit-content;
+}
+
+.contact-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 5px 10px;
+  transition: opacity 0.1s ease-in-out;
+  color: black;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.contact-bar-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.contact-bar:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.social-item:hover {
+  opacity: 0.5;
 }
 
 .social-link-text {
-    font-weight: bold;
-    font-size: 14px;
-    word-wrap: break-word;
+  font-weight: bold;
+  font-size: 14px;
+  word-wrap: break-word;
 }
 
 .social-item a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .animation-card {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 250px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    border-radius: 15px;
-    border: 2px solid black;
-    overflow: hidden;
-
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  border: 2px solid black;
+  overflow: hidden;
 }
 
 .confirm-icon {
-    width: 30px;
-    height: 30px;
-    margin: 0px 10px;
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px;
 }
 
 .progress-bar {
-    width: 100%;
-    height: 10%;
-    position: absolute;
-    bottom: 0px;
-    background-color: green;
-    animation: drain-bar 15s forwards linear;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0px;
+  background-color: green;
+  animation: drain-bar 15s forwards linear;
 }
 
 @keyframes drain-bar {
-    0% {
-        width: 100%;
-    }
+  0% {
+    width: 100%;
+  }
 
-    100% {
-        width: 0%;
-    }
+  100% {
+    width: 0%;
+  }
 }
 
 .pfp-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    margin-left: 5px;
-    margin-top: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .tweet {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid black;
 }
 
 .tweet-content {
-    padding: 5px;
+  padding: 5px;
 }
 
 .tweet-top-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1px;
 }
 
 .user-at {
-    font-size: 11px;
-    margin: 0 3px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.282);
+  font-size: 11px;
+  margin: 0 3px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.282);
 }
 
 .time-text {
-    font-size: 11px;
-    margin: 0;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.282);
+  font-size: 11px;
+  margin: 0;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.282);
 }
 
 .tweet-text {
-    font-size: 12px;
-    margin: 0;
+  font-size: 12px;
+  margin: 0;
 }
 
 .tweet-feed {
-    border-top: 1px solid black;
-    max-height: 83%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: none;
+  border-top: 1px solid black;
+  max-height: 83%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
 
 .overflow-holder {
-    height: 100vh;
-    overflow-y: hidden;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.mobile-contact-section {
+  display: none;
 }
 
 @media (max-width: 1400px) {
-    .social-link-text {
-        width: 95px;
-    }
+  .social-link-text {
+    width: 95px;
+  }
 }
 
 @media (max-width: 1400px) {
-    .social-link-text {
-        width: unset;
-    }
+  .social-link-text {
+    width: unset;
+  }
 
-    .holder {
-        margin: unset;
-        height: fit-content;
-        margin-top: 7%;
-    }
+  .holder {
+    margin: unset;
+    height: fit-content;
+    margin-top: 7%;
+  }
 
-    .overflow-holder {
-        height: fit-content;
-    }
+  .overflow-holder {
+    height: fit-content;
+  }
 
-    .grid {
-        display: flex;
-        flex-direction: column;
-        width: 60%;
-    }
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
 
-    .social-card {
-        margin-top: 20px;
-    }
+  .social-card {
+    margin-top: 20px;
+  }
 
-    .tweet-card {
-        margin: 20px 0px;
-    }
-
+  .tweet-card {
+    margin: 20px 0px;
+  }
 }
+
+
 
 @media (max-width: 600px) {
-    .holder {
-        margin: unset;
-        margin-top: 15%;
-        height: fit-content;
-        overflow-y: hidden;
-    }
+  .desktop-contact-bars-section {
+    display: none;
+  }
 
-    .overflow-holder {
-        height: fit-content;
-    }
+  .desktop-socials-section {
+    display: none;
+  }
 
-    .grid {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-    }
+  .mobile-contact-section {
+    display: unset;
+  }
 
-    .tweet-card {
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-        margin: 20px 0;
-    }
+  .social-links-container {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
 
-    .tweet-feed {
-        height: 75%;
-    }
-    
-    .social-card {
-        margin-top: 20px;
-    }
+  .text-and-socials-section-title {
+    text-align: center;
+  }
 
+  .text-and-socials-section-subtitle {
+    text-align: center;
+  }
 
+  .text-and-socials-section-description {
+    text-align: center;
+  }
+
+  .contact-bars-container {
+    width: 100%;
+    padding: 0px 0px;
+    align-items: center;
+  }
+
+  .contact-bar {
+    justify-content: center;
+    padding-right: 0px;
+    border-radius: 0px;
+    width: unset;
+  }
+
+  .holder {
+    margin: unset;
+    margin-top: 15%;
+    height: fit-content;
+    overflow-y: hidden;
+  }
+
+  .overflow-holder {
+    height: fit-content;
+  }
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+  }
+
+  .tweet-card {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+
+  .tweet-feed {
+    height: 75%;
+  }
+
+  .social-card {
+    margin-top: 20px;
+  }
 }
