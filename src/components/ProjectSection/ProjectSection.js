@@ -135,6 +135,7 @@ const ProjectSection = ({ scrollAnimationList }) => {
               <video
                 autoPlay={true}
                 loop
+                playsInline
                 className={styles["focused-project-image"]}
               >
                 <source src={vidPath} type="video/mp4" />
