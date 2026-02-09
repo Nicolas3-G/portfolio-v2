@@ -335,7 +335,39 @@
   .tweet-card {
     margin: 20px 0px;
   }
+
+  .text-and-socials-section-description {
+    text-align: center;
+  }
+
+  .text-and-socials-section-title {
+    text-align: center;
+  }
+
+  .text-and-socials-section-subtitle {
+    text-align: center;
+  }
+
+  .social-links-container {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .contact-bars-container {
+    width: 100%;
+    padding: 0px 0px;
+    align-items: center;
+  }
+
+  .contact-bar {
+    justify-content: center;
+    padding-right: 0px;
+    border-radius: 0px;
+    width: unset;
+  }
 }
+
 
 
 
@@ -350,37 +382,6 @@
 
   .mobile-contact-section {
     display: unset;
-  }
-
-  .social-links-container {
-    width: 100%;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .text-and-socials-section-title {
-    text-align: center;
-  }
-
-  .text-and-socials-section-subtitle {
-    text-align: center;
-  }
-
-  .text-and-socials-section-description {
-    text-align: center;
-  }
-
-  .contact-bars-container {
-    width: 100%;
-    padding: 0px 0px;
-    align-items: center;
-  }
-
-  .contact-bar {
-    justify-content: center;
-    padding-right: 0px;
-    border-radius: 0px;
-    width: unset;
   }
 
   .holder {

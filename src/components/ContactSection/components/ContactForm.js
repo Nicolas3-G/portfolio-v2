@@ -30,7 +30,7 @@ const ContactForm = ({ runEmailAnimation }) => {
         <form id="myForm" onSubmit={(e) => sendEmail(e)} className={styles["contact-form"]}>
             <div className={styles["form-text-holder"]}>
                 <div className={styles["input-holder"]}>
-                    <label className={styles["input-label"]}>Your Name Test</label>
+                    <label className={styles["input-label"]}>Your Name</label>
                     <input required onChange={(e) => setUserName(e.target.value)} value={userName} className={styles["input-field"]} name="user_name" type="text"></input>
                 </div>
                 <div className={styles["input-holder"]}>
