@@ -78,15 +78,11 @@
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-  /* Prevent iOS scroll flicker by promoting to own compositing layer */
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .project-card:hover {
   box-shadow: 11px 11px 130px 70px rgba(206, 212, 224, 0.32);
-  transform: translateZ(0) scale(1.01);
+  transform: scale(1.01);
 }
 
 .project-card.selected {
@@ -102,19 +98,11 @@
   place-self: center;
   position: relative;
   border-radius: 5px;
-  /* Prevent iOS scroll flicker */
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .project-image {
   background-color: #f0f0f0;
   object-fit: contain;
-  /* Prevent iOS scroll flicker */
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .overlay {
